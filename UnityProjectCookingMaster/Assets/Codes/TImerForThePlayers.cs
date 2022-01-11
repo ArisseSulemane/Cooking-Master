@@ -18,13 +18,19 @@ public class TImerForThePlayers : MonoBehaviour
     void Update()
     {
     //decreasing time for the player1;
+    if(timePlayerOne>0){
      timePlayerOne = timePlayerOne - 1 * Mathf.RoundToInt(Time.deltaTime);
       //converting float decimal to in show in UI
+    }
+    
      timePlayerOne1=(int)timePlayerOne;  
      timePlayerOneUI.text="Time: "+ timePlayerOne1 +"S";
      //-------------------------------------------------
-      //decreasing time for the player2;
+     if(timePlayerTwo>0){
+        //decreasing time for the player2;
      timePlayerTwo = timePlayerOne  -= Time.deltaTime;
+     }
+   
      //converting float decimal to in show in UI
      timePlayerTwo1=(int)timePlayerTwo;   
      timePlayerTwoUI.text="Time: "+ timePlayerTwo1 +"S";
