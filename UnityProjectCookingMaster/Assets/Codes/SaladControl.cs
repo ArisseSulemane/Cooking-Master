@@ -9,13 +9,13 @@ public class SaladControl : MonoBehaviour
    //bool variables to contol wich slot is being used
    public bool picked1Player1,picked2Player1,chopVeg;
    //bool variables to contol wich vegetable player picked
-   public int  vegectable1,vegectable2,vegectable3;
-   public Sprite a,b,c,d,e,f;
+   public int  vegectable1,vegectable2,vegectable3,chopVegSlot;
+   public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
-   private float timeChop;
+   public float timeChop;
    public GameObject timerUI;
    public Slider playerOneTimerChopUI;
-
+ 
 
    void Start(){
    picked1Player1=false;
@@ -24,6 +24,7 @@ public class SaladControl : MonoBehaviour
    vegectable2=0;
    vegectable3=0;
    timeChop=0;
+   chopVegSlot=0;
    }
     
     void Update(){
@@ -31,26 +32,59 @@ public class SaladControl : MonoBehaviour
     if(picked1Player1==true){
     picked2Player1=false;
     }
-    //the timer will UI will appear now
-    if(timeChop<5 && chopVeg==true){
+    //the timerUI will appear now
+    //chop vegetable 1
+    if(chopVegSlot==1){
+    if(timeChop<=5 && chopVeg==true){
     timeChop=timeChop+1*Time.deltaTime;
     timerUI.SetActive(true);
     playerOneTimerChopUI.value=timeChop;
     //disable move script for the player not move around
     gameObject.GetComponent<PlayerOne>().enabled = false;
-    }else{
+    }
+    //if timer be iqual 0 increse more 5 time
+    if(timeChop>=5){
+    //enable true to player move again
+        //reset timer to 0
+    playerOneTimerChopUI.value=0;
+    //hide UI info timer
+    timerUI.SetActive(false); 
+    //Enable again player moviment   
+    gameObject.GetComponent<PlayerOne>().enabled = true;
+    chopVeg=false; 
+    image1.GetComponent<Image> ().sprite = empty;
+    chopVegSlot=2;
+    timeChop=0;
+    }
+    }
+    //chop vegetable 2
+    if(chopVegSlot==2){
+    if(timeChop<=5 && chopVeg==true){
+    timeChop=timeChop+1*Time.deltaTime;
+    timerUI.SetActive(true);
+    playerOneTimerChopUI.value=timeChop;
+    //disable move script for the player not move around
+    gameObject.GetComponent<PlayerOne>().enabled = false;
+    }
+    //if timer be iqual 0 increse more 5 time
+    if(timeChop>=5){
+    //enable true to player move again
+    image2.GetComponent<Image> ().sprite = empty;
+    chopVegSlot=0;
+    
+    //reset all slots to receive third vegetable
+    picked1Player1=false;
+    picked2Player1=true;
+    chopVeg=false;
+    gameObject.GetComponent<PlayerOne>().enabled = true;
     //reset timer to 0
     playerOneTimerChopUI.value=0;
     //hide UI info timer
     timerUI.SetActive(false); 
     //Enable again player moviment   
     gameObject.GetComponent<PlayerOne>().enabled = true;
+    timeChop=0; 
     }
-    //if timer be iqual 0 increse more 5 time
-    if(timeChop==5){
-    timeChop=0;
-    //enable true to player move again
-    chopVeg=false;  
     }
 
     }
@@ -101,7 +135,7 @@ public class SaladControl : MonoBehaviour
   vegectable2=1;
   image2.GetComponent<Image> ().sprite = a;
   }
-
+  
   if (col.gameObject.tag == "b" && Input.GetKeyDown("e")){
   vegectable2=2;
   image2.GetComponent<Image> ().sprite = b;
@@ -128,8 +162,13 @@ public class SaladControl : MonoBehaviour
   }
 
  //if player stay in the table and press e will disable the moviments for while and will start chopveg
-  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e")){
+  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e") && chopVegSlot==0){
   chopVeg=true;
+  chopVegSlot=1;
+  }
+  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e") && chopVegSlot==2){
+  chopVeg=true;
+  chopVegSlot=2;
   }
   }
  
