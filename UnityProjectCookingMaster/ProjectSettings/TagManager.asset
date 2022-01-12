@@ -12,6 +12,8 @@ TagManager:
   - f
   - Player1
   - Player2
+  - table1
+  - table2
   layers:
   - Default
   - TransparentFX

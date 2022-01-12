@@ -9,8 +9,10 @@ public class PlayerOne : MonoBehaviour
     public Transform playerOne;
     //velocity player moves variable
     public float playerVelocity;
-
-
+   
+    void Start(){
+        
+    }
 void Update(){
 //all the keys to move around the player in scene with limits 
 if(Input.GetKey("w") && playerOne.position.z < -0.3)
@@ -33,7 +35,9 @@ if(Input.GetKey("d") && playerOne.position.x < 26.5)
 {
 //calling method right to move player to right sides of the scene
  Right();
+
 }
+
 }
 
 //all methods to transform the player up,down,left and right

@@ -6,11 +6,15 @@ using UnityEngine.UI;
 public class SaladControl : MonoBehaviour
 {
    
-
-   public bool picked1Player1,picked2Player1;
+   //bool variables to contol wich slot is being used
+   public bool picked1Player1,picked2Player1,chopVeg;
+   //bool variables to contol wich vegetable player picked
    public int  vegectable1,vegectable2,vegectable3;
    public Sprite a,b,c,d,e,f;
    public Image image1,image2;
+   private float timeChop;
+   public GameObject timerUI;
+   public Slider playerOneTimerChopUI;
 
 
    void Start(){
@@ -19,12 +23,36 @@ public class SaladControl : MonoBehaviour
    vegectable1=0;
    vegectable2=0;
    vegectable3=0;
-  
+   timeChop=0;
    }
+    
     void Update(){
+    //if slot 1 be used will open slot 2 to be used
     if(picked1Player1==true){
     picked2Player1=false;
     }
+    //the timer will UI will appear now
+    if(timeChop<5 && chopVeg==true){
+    timeChop=timeChop+1*Time.deltaTime;
+    timerUI.SetActive(true);
+    playerOneTimerChopUI.value=timeChop;
+    //disable move script for the player not move around
+    gameObject.GetComponent<PlayerOne>().enabled = false;
+    }else{
+    //reset timer to 0
+    playerOneTimerChopUI.value=0;
+    //hide UI info timer
+    timerUI.SetActive(false); 
+    //Enable again player moviment   
+    gameObject.GetComponent<PlayerOne>().enabled = true;
+    }
+    //if timer be iqual 0 increse more 5 time
+    if(timeChop==5){
+    timeChop=0;
+    //enable true to player move again
+    chopVeg=false;  
+    }
+
     }
 
   void OnTriggerStay(Collider col){
@@ -66,9 +94,9 @@ public class SaladControl : MonoBehaviour
   picked1Player1=true;
   }
   }
-  
+  //verify name of the vegetable to take
   if(picked2Player1==false){
-       //verify name of the vegetable to take
+//if player pick vegetable f will change the UI icon nad give value vegetable2
   if (col.gameObject.tag == "a" && Input.GetKeyDown("e")){
   vegectable2=1;
   image2.GetComponent<Image> ().sprite = a;
@@ -93,23 +121,17 @@ public class SaladControl : MonoBehaviour
   vegectable2=5;
   image2.GetComponent<Image> ().sprite = e;
   }
-
+  //if player pick vegetable f will change the UI icon nad give value vegetable2
   if (col.gameObject.tag == "f" && Input.GetKeyDown("e")){
   vegectable2=6;
   image2.GetComponent<Image> ().sprite = f;
   }
+
+ //if player stay in the table and press e will disable the moviments for while and will start chopveg
+  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e")){
+  chopVeg=true;
+  }
   }
  
-
-
-
-
-
-
-
-
   }
-  
-
-
 }
