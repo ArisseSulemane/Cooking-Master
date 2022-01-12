@@ -9,7 +9,7 @@ public class SaladControl : MonoBehaviour
    //bool variables to contol wich slot is being used
    public bool picked1Player1,picked2Player1,picked3Player1,chopVeg,thirdVegetable;
    //bool variables to contol wich vegetable player picked
-   public int  vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
+   public static int  vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
    public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
    public float timeChop;
