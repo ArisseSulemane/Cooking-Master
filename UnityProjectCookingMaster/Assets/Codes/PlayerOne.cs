@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerOne : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class PlayerOne : MonoBehaviour
     // player variable tranform to move around the level	
     public Transform playerOne;
     //velocity player moves variable
+    public static int Score;
     public float playerVelocity;
-   
+    public Text ScoreIu;
     void Start(){
         
     }
 void Update(){
+ScoreIu.text="Score: "+Score;
 //all the keys to move around the player in scene with limits 
 if(Input.GetKey("w") && playerOne.position.z < -0.3)
 {
