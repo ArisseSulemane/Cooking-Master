@@ -13,7 +13,7 @@ public class SaladControl : MonoBehaviour
    public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
    public  static float timeChop;
-   public GameObject timerUI;
+   public GameObject timerUI,PlateCheffTable;
    public Slider playerOneTimerChopUI;
    public GameObject [] SaladMix; 
    public Sprite [] spritesIndex;
@@ -37,6 +37,14 @@ public class SaladControl : MonoBehaviour
    }
     
     void Update(){
+    //if no vegetable selected, then plate has to be empty and disabled for iterration
+    if(slot==0){
+    PlateCheffTable.GetComponent<BoxCollider> ().enabled = false;
+    }else{
+    //if is vegetable selected, then plate has to be ready and enabled for iterration
+    PlateCheffTable.GetComponent<BoxCollider> ().enabled = true; 
+    }
+
     //the timerUI will appear now
     if(timeChop<=5 && chopVeg==true){
     timeChop=timeChop+1*Time.deltaTime;

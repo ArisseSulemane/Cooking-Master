@@ -8,14 +8,14 @@ public class SaladGive1 : MonoBehaviour
 
 
     public static  int clientCombination1,clientCombination2,clientCombination3,clientCombination4,clientCombination5,plates;
-    public GameObject clientPlate1,clientPlate2,clientPlate3,clientPlate4,clientPlate5,playerPlateMove;
+    public GameObject clientPlate1,clientPlate2,clientPlate3,clientPlate4,clientPlate5,playerPlateMove,trashplate;
     public GameObject [] vegetablesInThePlate1;
     public GameObject [] vegetablesInThePlate2;
     public GameObject [] vegetablesInThePlate3;
     public GameObject [] vegetablesInThePlate4;
     public GameObject [] vegetablesInThePlate5;
     public GameObject [] vegetablesInMovePlate;
-    public GameObject [] vegetablesInStaticPlate;
+    public GameObject [] vegetablesInStaticPlate,TrashSaladVegetables;
     public GameObject [] ClientsTimersUi;
     public static string  saladCombination;
     public static bool reseted,GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
@@ -315,6 +315,38 @@ public class SaladGive1 : MonoBehaviour
     }
     Debug.Log("you take plate");
     }
+    //Trash  Salad
+    //take plate to client
+    if(col.gameObject.tag == "plate1" && Input.GetKeyDown("q")){
+    trashplate.SetActive(true);
+    //hide all vegetable in chef plate
+    TrashSaladVegetables[SaladControl.vegectable1].SetActive(false);
+    TrashSaladVegetables[SaladControl.vegectable2].SetActive(false);
+    TrashSaladVegetables[SaladControl.vegectable3].SetActive(false);
+    //shhow all vegetables in new plate to take to client
+    if(SaladControl.vegectable3==0){
+    TrashSaladVegetables[SaladControl.vegectable1].SetActive(true);
+    TrashSaladVegetables[SaladControl.vegectable2].SetActive(true);
+    }else{
+    TrashSaladVegetables[SaladControl.vegectable1].SetActive(true);
+    TrashSaladVegetables[SaladControl.vegectable2].SetActive(true);
+    TrashSaladVegetables[SaladControl.vegectable3].SetActive(true);
+    }
+
+    if(SaladControl.vegectable3==0){
+    vegetablesInStaticPlate[SaladControl.vegectable1].SetActive(false);
+    vegetablesInStaticPlate[SaladControl.vegectable2].SetActive(false);
+    }else{
+    vegetablesInStaticPlate[SaladControl.vegectable1].SetActive(false);
+    vegetablesInStaticPlate[SaladControl.vegectable2].SetActive(false);
+    vegetablesInStaticPlate[SaladControl.vegectable3].SetActive(false);
+    }
+    ResetAll();
+    Debug.Log("you take plate");
+    }
+
+
+
 
     //client 1 give food
     if(col.gameObject.tag == "client1" && Input.GetKeyDown("e") && plates==1){
