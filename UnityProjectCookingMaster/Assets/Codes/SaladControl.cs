@@ -19,7 +19,7 @@ public class SaladControl : MonoBehaviour
    public Sprite [] spritesIndex;
 
    void Start(){
-   picked1Player1=false;
+   picked1Player1=true;
    picked2Player1=false;
    picked3Player1=false;
    thirdVegetable=false;
@@ -114,7 +114,7 @@ public class SaladControl : MonoBehaviour
 
   void OnTriggerStay(Collider col){
   //verify if slot one is empty to take one vegetable
-  if(picked1Player1==false && slot==0 && Input.GetKeyDown("e")){
+  if(picked1Player1==true && slot==0 && Input.GetKeyUp("e")){
   //verify name of the vegetable to take
    if(col.gameObject.tag == "a"){
    vegetableIndex=1;
@@ -161,7 +161,7 @@ public class SaladControl : MonoBehaviour
 
 //======================================================
  //verify if slot one is empty to take one vegetable
-  if(picked2Player1==true && slot==1 && Input.GetKeyDown("e")){
+  if(picked2Player1==true && slot==1 && Input.GetKeyUp("e")){
     
   //verify name of the vegetable to take
   if(col.gameObject.tag == "a"){
@@ -210,7 +210,7 @@ public class SaladControl : MonoBehaviour
 
   //======================================================
  //verify if slot one is empty to take one vegetable
-  if(picked3Player1==true && slot==2 && Input.GetKeyDown("e")){ 
+  if(picked3Player1==true && slot==2 && Input.GetKeyUp("e")){ 
   //verify name of the vegetable to take
   if(col.gameObject.tag == "a"){
   vegetableIndex=1;

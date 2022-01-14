@@ -59,10 +59,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client1
     ClientsTimersUi[0].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    reseted=true;
-    if(reseted==true){
     ResetAll();
-    }
   
     }
      if(GiveSaladClit1==true && saladCombination!=clientCombination1.ToString()){
@@ -89,10 +86,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
     //disable UI timer bar for client1
     ClientsTimersUi[0].SetActive(false);
-      reseted=true;
-    if(reseted==true){
     ResetAll();
-    }
     }
     //give salad2
     if(GiveSaladClit2==true && saladCombination==clientCombination2.ToString()){
@@ -118,10 +112,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client2
     ClientsTimersUi[1].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      reseted=true;
-    if(reseted==true){
     ResetAll();
-    }
     } if(GiveSaladClit2==true && saladCombination!=clientCombination2.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -146,10 +137,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client2
     ClientsTimersUi[1].SetActive(false);
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     }
         //give salad3
     if(GiveSaladClit3==true && saladCombination==clientCombination3.ToString()){
@@ -175,10 +163,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client3
     ClientsTimersUi[2].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     } if(GiveSaladClit3==true && saladCombination!=clientCombination3.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -203,10 +188,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client3
     ClientsTimersUi[2].SetActive(false);
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     }
     //give salad4
     if(GiveSaladClit4==true && saladCombination==clientCombination4.ToString()){
@@ -232,10 +214,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     } if(GiveSaladClit4==true && saladCombination!=clientCombination4.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -260,10 +239,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false); 
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     }
         //give salad5
     if(GiveSaladClit5==true && saladCombination==clientCombination5.ToString()){
@@ -289,10 +265,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     } if(GiveSaladClit1==true && saladCombination!=clientCombination5.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -315,10 +288,7 @@ public class SaladGive1 : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Debug.Log("Cliet Is Angry wrong salad");
-      reseted=true;
-    if(reseted==true){
-    ResetAll();
-    }
+      ResetAll();
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false); 
     }
@@ -390,6 +360,7 @@ public class SaladGive1 : MonoBehaviour
    SaladControl.vegetablesCounter=0;
    SaladControl.vegetableIndex=0;
    SaladControl.slot=0;
+   SaladControl.vegetableIndex=0;
    Debug.Log("picked1"+SaladControl.picked1Player1);
    Debug.Log("picked2"+SaladControl.picked2Player1);
    Debug.Log("pickd3"+SaladControl.picked3Player1);
