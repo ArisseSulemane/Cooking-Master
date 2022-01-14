@@ -345,7 +345,7 @@ public class SaladGive1 : MonoBehaviour
 
   public static void ResetAll(){
   //reset all status of SaladControl
-   SaladControl.picked1Player1=false;
+   SaladControl.picked1Player1=true;
    SaladControl.picked2Player1=false;
    SaladControl.picked3Player1=false;
    SaladControl.thirdVegetable=false;

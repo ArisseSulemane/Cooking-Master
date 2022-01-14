@@ -150,6 +150,7 @@ public class ClientsTimers : MonoBehaviour
     numbersToChooseFrom.Remove(1);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     timer1=0;
+    SaladGive1.ResetAll();
     satisfied1=false;
     }
     if(satisfied2==true && timer2<=50){
@@ -157,6 +158,7 @@ public class ClientsTimers : MonoBehaviour
     numbersToChooseFrom.Remove(2);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     timer2=0;
+    SaladGive1.ResetAll();
     satisfied2=false;
     }
     if(satisfied3==true && timer3<=50){
@@ -164,20 +166,23 @@ public class ClientsTimers : MonoBehaviour
     numbersToChooseFrom.Remove(3);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     timer3=0;
+    SaladGive1.ResetAll();
     satisfied3=false;
     }
     if(satisfied4==true && timer4<=50){
     ClientsTimeBar[3].SetActive(false);
-    numbersToChooseFrom.Remove(3);
+    numbersToChooseFrom.Remove(4);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     timer4=0;
+    SaladGive1.ResetAll();
     satisfied4=false;
     }
     if(satisfied5==true && timer5<=50){
-    ClientsTimeBar[0].SetActive(false);
-    numbersToChooseFrom.Remove(4);
+    ClientsTimeBar[4].SetActive(false);
+    numbersToChooseFrom.Remove(5);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     timer5=0;
+    SaladGive1.ResetAll();
     satisfied5=false;
     }
  
