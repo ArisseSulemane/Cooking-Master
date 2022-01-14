@@ -3868,11 +3868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a9e0462486d9d429bd4976c63d8a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  picked1Player1: 0
-  picked2Player1: 0
-  picked3Player1: 0
-  chopVeg: 0
-  thirdVegetable: 0
   a: {fileID: 21300000, guid: 9b691f14487a8b144ada99ec61527326, type: 3}
   b: {fileID: 21300000, guid: 0e8a0df773503d347b0416ec79815d53, type: 3}
   c: {fileID: 21300000, guid: fce2ead9f048d1449bd4fa6a93b311f7, type: 3}
@@ -3882,7 +3877,6 @@ MonoBehaviour:
   empty: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   image1: {fileID: 2040146195}
   image2: {fileID: 1260778032}
-  timeChop: 0
   timerUI: {fileID: 967743157}
   playerOneTimerChopUI: {fileID: 967743159}
   SaladMix:
@@ -3893,6 +3887,14 @@ MonoBehaviour:
   - {fileID: 1260776581}
   - {fileID: 1679638209}
   - {fileID: 1111085944}
+  spritesIndex:
+  - {fileID: 21300000, guid: 9b691f14487a8b144ada99ec61527326, type: 3}
+  - {fileID: 21300000, guid: 9b691f14487a8b144ada99ec61527326, type: 3}
+  - {fileID: 21300000, guid: 0e8a0df773503d347b0416ec79815d53, type: 3}
+  - {fileID: 21300000, guid: fce2ead9f048d1449bd4fa6a93b311f7, type: 3}
+  - {fileID: 21300000, guid: b81c219a33d338a4aa8baa5ed7ad7382, type: 3}
+  - {fileID: 21300000, guid: 674e83d8ceae0b147882285490637fcf, type: 3}
+  - {fileID: 21300000, guid: 24a00a44614b9134693157ed3a44fbc3, type: 3}
 --- !u!65 &696059188
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,22 +7,24 @@ public class SaladControl : MonoBehaviour
 {
    
    //bool variables to contol wich slot is being used
-   public static bool picked1Player1,picked2Player1,picked3Player1,chopVeg,thirdVegetable;
+   public static bool aux,picked1Player1,picked2Player1,picked3Player1,chopVeg,secondVegetable,thirdVegetable;
    //bool variables to contol wich vegetable player picked
-   public static int  vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
+   public static int  vegetableIndex,vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
    public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
    public  static float timeChop;
    public GameObject timerUI;
    public Slider playerOneTimerChopUI;
    public GameObject [] SaladMix; 
+   public Sprite [] spritesIndex;
 
    void Start(){
-   picked1Player1=true;
+   picked1Player1=false;
    picked2Player1=false;
    picked3Player1=false;
    thirdVegetable=false;
    thirdVegetable=false;
+   secondVegetable=false;
    vegectable1=0;
    vegectable2=0;
    vegectable3=0;
@@ -30,6 +32,8 @@ public class SaladControl : MonoBehaviour
    chopVegSlot=0;
    chopcount=0;
    vegetablesCounter=0;
+   vegetableIndex=0;
+   aux=false;
    }
     
     void Update(){
@@ -42,7 +46,6 @@ public class SaladControl : MonoBehaviour
     //disable move script for the player not move around
     gameObject.GetComponent<PlayerOne>().enabled = false;
     }
-    
     //if timer be iqual 0 increse more 5 time
     if(timeChop>=5){
     //enable true to player move again
@@ -76,133 +79,116 @@ public class SaladControl : MonoBehaviour
     SaladMix[vegectable2].SetActive(true);
     SaladMix[vegectable3].SetActive(true);
     }
+    }
 
+    //put new vegetable in UI
+    if(picked1Player1==true && aux==false){
+    vegectable1=vegetableIndex;
+    image1.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
+    vegetableIndex=0;
+    picked1Player1=false;
+    aux=true;
+    picked2Player1=false;
+    }
+     if(picked2Player1==true && aux==false){
+    vegectable2=vegetableIndex;
+    image2.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
+    vegetableIndex=0;
+    picked2Player1=false;
+    aux=true;
+    picked3Player1=true;
+    }
+
+    if(picked3Player1==true){
+    vegectable3=vegetableIndex;
+    image1.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
+    vegetableIndex=0;
+    picked3Player1=false;
     }
     }
 
   void OnTriggerStay(Collider col){
   //verify if slot one is empty to take one vegetable
-  if(thirdVegetable==false && picked1Player1==true && picked2Player1==false && picked3Player1==false  && Input.GetKeyUp("e")){
- //verify name of the vegetable to take
-  if (col.gameObject.tag == "a"){
-  vegectable1=1;
-  image1.GetComponent<Image> ().sprite = a;
-  }
-  if (col.gameObject.tag == "b"){
-  vegectable1=2;
-  image1.GetComponent<Image> ().sprite = b;
-  }
-
-  if (col.gameObject.tag == "c"){
-  vegectable1=3;
-  image1.GetComponent<Image> ().sprite = c;
-  }
-
- if (col.gameObject.tag == "d"){
-  vegectable1=4;
-  image1.GetComponent<Image> ().sprite = d;
-  }
-
-  if (col.gameObject.tag == "e"){
-  vegectable1=5;
-  image1.GetComponent<Image> ().sprite = e;
-  }
-
-  if (col.gameObject.tag == "f"){
-  vegectable1=6;
-  image1.GetComponent<Image> ().sprite = f;
-  }
-  Debug.Log("slot 1 active");
-  vegetablesCounter=1;
-  picked2Player1=true;
-  picked3Player1=false;
-  picked1Player1=false;
-  }
-
+  if(picked1Player1=true  && Input.GetKeyDown("e")){
   //verify name of the vegetable to take
-  if(thirdVegetable==false && picked2Player1==true && picked1Player1==false && picked3Player1==false  && Input.GetKeyDown("e")){
-  //if player pick vegetable f will change the UI icon and give value vegetable2
-  if (col.gameObject.tag == "a"){
-  vegectable2=1;
-  image2.GetComponent<Image> ().sprite = a;
-  }
-  
-  if (col.gameObject.tag == "b"){
-  vegectable2=2;
-  image2.GetComponent<Image> ().sprite = b;
+  if(col.gameObject.tag == "a"){
+  vegetableIndex=1;
+  picked1Player1=true;
+  aux=false;
   }
 
-  if (col.gameObject.tag == "c"){
-  vegectable2=3;
-  image2.GetComponent<Image> ().sprite = c;
+   if(col.gameObject.tag == "b"){
+  //verify name of the vegetable to take
+  vegetableIndex=2;
+  picked1Player1=true;
+  aux=false;
+  }
+   if(col.gameObject.tag == "c"){
+  //verify name of the vegetable to take
+  vegetableIndex=3;
+  picked1Player1=true;
+  aux=false;
+  }
+  if(col.gameObject.tag == "d"){
+  //verify name of the vegetable to take
+  vegetableIndex=4;
+  picked1Player1=true;
+  aux=false;
+  }
+   if(col.gameObject.tag == "e"){
+  //verify name of the vegetable to take
+   vegetableIndex=5;
+   picked1Player1=true;
+   aux=false;
+  }
+   if(col.gameObject.tag == "f"){
+  //verify name of the vegetable to take
+  vegetableIndex=6;
+  picked1Player1=true;
+  aux=false;
   }
 
- if (col.gameObject.tag == "d"){
-  vegectable2=4;
-  image2.GetComponent<Image> ().sprite = d;
+ //verify if slot one is empty to take one vegetable
+  if(picked2Player1==true && Input.GetKeyDown("e")){
+  //verify name of the vegetable to take
+  if(col.gameObject.tag == "a"){
+  vegetableIndex=1;
+  picked2Player1=true;
+  aux=false;
   }
 
-  if (col.gameObject.tag == "e"){
-  vegectable2=5;
-  image2.GetComponent<Image> ().sprite = e;
+   if(col.gameObject.tag == "b"){
+  //verify name of the vegetable to take
+  picked2Player1=true;
+  vegetableIndex=2;
+  aux=false;
   }
-  //if player pick vegetable f will change the UI icon and give value vegetable2
-  if (col.gameObject.tag == "f"){
-  vegectable2=6;
-  image2.GetComponent<Image> ().sprite = f;
+   if(col.gameObject.tag == "c"){
+  //verify name of the vegetable to take
+  picked2Player1=true;
+  vegetableIndex=3;
+  aux=false;
   }
-  Debug.Log("slot 2 active");
-  vegetablesCounter=2;
-  picked3Player1=true;
-  picked1Player1=false;
-  picked2Player1=false;
+  if(col.gameObject.tag == "d"){
+  //verify name of the vegetable to take
+  picked2Player1=true;
+  vegetableIndex=4;
+  aux=false;
   }
-//verify if slot one is empty to take one vegetable
-  if(thirdVegetable==true &&  Input.GetKeyDown("e")){
- //verify name of the vegetable to take
-  if (col.gameObject.tag == "a"){
-  vegectable3=1;
-  image1.GetComponent<Image> ().sprite = a;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
+   if(col.gameObject.tag == "e"){
+  //verify name of the vegetable to take
+  picked2Player1=true;
+  vegetableIndex=5;
+  aux=false;
   }
-  if (col.gameObject.tag == "b"){
-  vegectable3=2;
-  image1.GetComponent<Image> ().sprite = b;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
+   if(col.gameObject.tag == "f"){
+  //verify name of the vegetable to take
+  picked2Player1=true;
+  vegetableIndex=6;
+  aux=false;
   }
-  if (col.gameObject.tag == "c"){
-  vegectable3=3;
-  image1.GetComponent<Image> ().sprite = c;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
-  }
-  if (col.gameObject.tag == "d"){
-  vegectable3=4;
-  image1.GetComponent<Image> ().sprite = d;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
   }
 
-  if (col.gameObject.tag == "e"){
-  vegectable3=5;
-  image1.GetComponent<Image> ().sprite = e;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
-  }
-
-  if (col.gameObject.tag == "f"){
-  vegectable3=6;
-  image1.GetComponent<Image> ().sprite = f;
-  picked3Player1=true;
-  Debug.Log("slot 3 active");
-  }
-  vegetablesCounter=3;
-  picked1Player1=false;
-  picked2Player1=false;
-  picked3Player1=true;
-  }
 
  //if player stay in the table and press e will disable the moviments for while and will start chopveg
   if(chopVeg==false){
@@ -214,7 +200,7 @@ public class SaladControl : MonoBehaviour
   chopVeg=true;
   }
   }
-  
+  }
  
   
  

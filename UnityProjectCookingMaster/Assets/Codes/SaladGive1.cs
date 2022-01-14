@@ -147,7 +147,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
      SaladControl.thirdVegetable=false;
-    } if(GiveSaladClit1==true && saladCombination!=clientCombination2.ToString()){
+    } if(GiveSaladClit2==true && saladCombination!=clientCombination2.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
@@ -297,7 +297,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
      SaladControl.thirdVegetable=false;
-    } if(GiveSaladClit1==true && saladCombination!=clientCombination4.ToString()){
+    } if(GiveSaladClit4==true && saladCombination!=clientCombination4.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
@@ -437,6 +437,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //client 2 give food
     if(col.gameObject.tag == "client2" && Input.GetKeyDown("e") && plates==1){
+    GiveSaladClit2=true;
     }
     //client 3 give food
     if(col.gameObject.tag == "client3" && Input.GetKeyDown("e") && plates==1){
