@@ -28,30 +28,35 @@ public class ClientsTimers : MonoBehaviour
     numbersToChooseFrom.Remove(1);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("new client is active");
+    SaladGive1.GiveSaladClit1=false;
     }
       //remove client 2 from list
     if(SaladGive1.GiveSaladClit2==true && SaladGive1.saladCombination==SaladGive1.clientCombination2.ToString()){
     numbersToChooseFrom.Remove(2);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
+     SaladGive1.GiveSaladClit2=false;
     }
       //remove client 1 from list
     if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
     numbersToChooseFrom.Remove(3);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
+     SaladGive1.GiveSaladClit3=false;
     }
       //remove client 1 from list
     if(SaladGive1.GiveSaladClit4==true && SaladGive1.saladCombination==SaladGive1.clientCombination4.ToString()){
     numbersToChooseFrom.Remove(4);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
+     SaladGive1.GiveSaladClit4=false;
     }
       //remove client 1 from list
-    if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
-    numbersToChooseFrom.Remove(5);
-    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
+     numbersToChooseFrom.Remove(5);
+     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
+     SaladGive1.GiveSaladClit5=false;
     }
     
     if(client==1)

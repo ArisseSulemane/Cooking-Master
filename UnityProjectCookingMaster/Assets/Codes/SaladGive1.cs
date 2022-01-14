@@ -59,7 +59,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client1
     ClientsTimersUi[0].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    GiveSaladClit1=false;
+    
     }
      if(GiveSaladClit1==true && saladCombination!=clientCombination1.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
@@ -85,7 +85,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client1
     ClientsTimersUi[0].SetActive(false); 
-    GiveSaladClit1=false; 
+     
     }
     //give salad2
     if(GiveSaladClit2==true && saladCombination==clientCombination2.ToString()){
@@ -111,7 +111,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client2
     ClientsTimersUi[1].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    GiveSaladClit2=false;
+   
     } if(GiveSaladClit1==true && saladCombination!=clientCombination2.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -136,7 +136,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client2
     ClientsTimersUi[1].SetActive(false); 
-    GiveSaladClit2=false; 
+     
     }
         //give salad3
     if(GiveSaladClit3==true && saladCombination==clientCombination3.ToString()){
@@ -162,7 +162,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client3
     ClientsTimersUi[2].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    GiveSaladClit3=false;
+    
     } if(GiveSaladClit3==true && saladCombination!=clientCombination3.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -187,7 +187,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client3
     ClientsTimersUi[2].SetActive(false); 
-    GiveSaladClit3=false; 
+     
     }
     //give salad4
     if(GiveSaladClit4==true && saladCombination==clientCombination4.ToString()){
@@ -213,7 +213,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    GiveSaladClit4=false;
+    
     } if(GiveSaladClit1==true && saladCombination!=clientCombination4.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -238,7 +238,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false); 
-    GiveSaladClit4=false; 
+    
     }
         //give salad5
     if(GiveSaladClit5==true && saladCombination==clientCombination5.ToString()){
@@ -264,7 +264,7 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-    GiveSaladClit5=false;
+    
     } if(GiveSaladClit1==true && saladCombination!=clientCombination5.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -289,7 +289,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false); 
-    GiveSaladClit5=false; 
+    
     }
 
     }
