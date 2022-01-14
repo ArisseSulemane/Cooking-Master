@@ -29,45 +29,13 @@ public class ClientsTimers : MonoBehaviour
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("new client is active");
     SaladGive1.GiveSaladClit1=false;
-    //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     Debug.Log(SaladControl.picked1Player1);
-     Debug.Log(SaladControl.picked2Player1);
-     Debug.Log(SaladControl.picked3Player1);
-     Debug.Log(SaladControl.thirdVegetable);
     }
       //remove client 2 from list
     if(SaladGive1.GiveSaladClit2==true && SaladGive1.saladCombination==SaladGive1.clientCombination2.ToString()){
-    numbersToChooseFrom.Remove(2);
-    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     numbersToChooseFrom.Remove(2);
+     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit2=false;
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-    Debug.Log(SaladControl.picked1Player1);
-     Debug.Log(SaladControl.picked2Player1);
-     Debug.Log(SaladControl.picked3Player1);
-     Debug.Log(SaladControl.thirdVegetable);
     }
       //remove client 3 from list
      if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
@@ -75,22 +43,6 @@ public class ClientsTimers : MonoBehaviour
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit3=false;
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-      Debug.Log(SaladControl.picked1Player1);
-     Debug.Log(SaladControl.picked2Player1);
-     Debug.Log(SaladControl.picked3Player1);
-     Debug.Log(SaladControl.thirdVegetable);
     }
       //remove client 4 from list
     if(SaladGive1.GiveSaladClit4==true && SaladGive1.saladCombination==SaladGive1.clientCombination4.ToString()){
@@ -98,22 +50,6 @@ public class ClientsTimers : MonoBehaviour
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit4=false;
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-    Debug.Log(SaladControl.picked1Player1);
-     Debug.Log(SaladControl.picked2Player1);
-     Debug.Log(SaladControl.picked3Player1);
-     Debug.Log(SaladControl.thirdVegetable);
     }
       //remove client 5 from list
      if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
@@ -121,23 +57,6 @@ public class ClientsTimers : MonoBehaviour
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit5=false;
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
-     Debug.Log(SaladControl.picked1Player1);
-     Debug.Log(SaladControl.picked2Player1);
-     Debug.Log(SaladControl.picked3Player1);
-     Debug.Log(SaladControl.thirdVegetable);
     }
     
     if(client==1)
@@ -225,7 +144,43 @@ public class ClientsTimers : MonoBehaviour
     Debug.Log("Client Is Gone");
     timer5=0;
     }
-
+    // SATISFIED CLIENTS
+    if(satisfied1==true && timer1<=50){
+    ClientsTimeBar[0].SetActive(false);
+    numbersToChooseFrom.Remove(1);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    timer1=0;
+    satisfied1=false;
+    }
+    if(satisfied2==true && timer2<=50){
+    ClientsTimeBar[1].SetActive(false);
+    numbersToChooseFrom.Remove(2);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    timer2=0;
+    satisfied2=false;
+    }
+    if(satisfied3==true && timer3<=50){
+    ClientsTimeBar[2].SetActive(false);
+    numbersToChooseFrom.Remove(3);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    timer3=0;
+    satisfied3=false;
+    }
+    if(satisfied4==true && timer4<=50){
+    ClientsTimeBar[3].SetActive(false);
+    numbersToChooseFrom.Remove(3);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    timer4=0;
+    satisfied4=false;
+    }
+    if(satisfied5==true && timer5<=50){
+    ClientsTimeBar[0].SetActive(false);
+    numbersToChooseFrom.Remove(4);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    timer5=0;
+    satisfied5=false;
+    }
+ 
     }
 
 
