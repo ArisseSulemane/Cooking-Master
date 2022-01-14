@@ -8,11 +8,12 @@ public class ClientsTimers : MonoBehaviour
     public float timer1,timer2,timer3,timer4,timer5;
     public int client;
     public Slider slider1,slider2,slider3,slider4,slider5;
-    public GameObject [] Clients;
+    public GameObject [] Clients,ClientsTimeBar;
     public static bool satisfied1,satisfied2,satisfied3,satisfied4,satisfied5;
+    public List<int> numbersToChooseFrom = new List<int>(new int[]{1,2,3,4,5});
 
     void Start(){
-    client = Random.Range (0,6);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     satisfied1=false;
     satisfied2=false;
     satisfied3=false;
@@ -22,6 +23,37 @@ public class ClientsTimers : MonoBehaviour
 
     void Update()
     {
+    //remove client 1 from list
+    if(SaladGive1.GiveSaladClit1==true && SaladGive1.saladCombination==SaladGive1.clientCombination1.ToString()){
+    numbersToChooseFrom.Remove(1);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+    Debug.Log("new client is active");
+    }
+      //remove client 2 from list
+    if(SaladGive1.GiveSaladClit2==true && SaladGive1.saladCombination==SaladGive1.clientCombination2.ToString()){
+    numbersToChooseFrom.Remove(2);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     Debug.Log("new client is active");
+    }
+      //remove client 1 from list
+    if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
+    numbersToChooseFrom.Remove(3);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     Debug.Log("new client is active");
+    }
+      //remove client 1 from list
+    if(SaladGive1.GiveSaladClit4==true && SaladGive1.saladCombination==SaladGive1.clientCombination4.ToString()){
+    numbersToChooseFrom.Remove(4);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     Debug.Log("new client is active");
+    }
+      //remove client 1 from list
+    if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
+    numbersToChooseFrom.Remove(5);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     Debug.Log("new client is active");
+    }
+    
     if(client==1)
     {
     timer1=timer1+1*Time.deltaTime;
@@ -53,7 +85,11 @@ public class ClientsTimers : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Clients[0].SetActive(false);
+    ClientsTimeBar[0].SetActive(false);
+    numbersToChooseFrom.Remove(1);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("Client Is Gone");
+    timer1=0;
     }
 
     if(satisfied2==false && timer2>=50){
@@ -61,7 +97,11 @@ public class ClientsTimers : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Clients[1].SetActive(false);
+    ClientsTimeBar[1].SetActive(false);
+    numbersToChooseFrom.Remove(2);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("Client Is Gone");
+    timer2=0;
     }
 
     if(satisfied3==false && timer3>=50){
@@ -69,7 +109,11 @@ public class ClientsTimers : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Clients[2].SetActive(false);
+    ClientsTimeBar[2].SetActive(false);
+    numbersToChooseFrom.Remove(3);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("Client Is Gone");
+    timer3=0;
     }
 
     if(satisfied4==false && timer4>=50){
@@ -77,7 +121,11 @@ public class ClientsTimers : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Clients[3].SetActive(false);
+    ClientsTimeBar[3].SetActive(false);
+    numbersToChooseFrom.Remove(4);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("Client Is Gone");
+    timer4=0;
     }
     
     if(satisfied5==false && timer5>=50){
@@ -85,7 +133,11 @@ public class ClientsTimers : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Clients[4].SetActive(false);
+    ClientsTimeBar[4].SetActive(false);
+    numbersToChooseFrom.Remove(5);
+    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("Client Is Gone");
+    timer5=0;
     }
 
     }

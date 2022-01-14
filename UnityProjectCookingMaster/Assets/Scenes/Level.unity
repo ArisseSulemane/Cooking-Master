@@ -3918,12 +3918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db87bac0260f884592fb79ef0e43fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientCombination1: 0
-  clientCombination2: 0
-  clientCombination3: 0
-  clientCombination4: 0
-  clientCombination5: 0
-  plates: 0
   clientPlate1: {fileID: 5267209}
   clientPlate2: {fileID: 1107887647}
   clientPlate3: {fileID: 251341063}
@@ -3986,12 +3980,12 @@ MonoBehaviour:
   - {fileID: 1260776581}
   - {fileID: 1679638209}
   - {fileID: 1111085944}
-  saladCombination: 
-  GiveSaladClit1: 0
-  GiveSaladClit2: 0
-  GiveSaladClit3: 0
-  GiveSaladClit4: 0
-  GiveSaladClit5: 0
+  ClientsTimersUi:
+  - {fileID: 336866393}
+  - {fileID: 517861794}
+  - {fileID: 51356056}
+  - {fileID: 991274048}
+  - {fileID: 2137167850}
 --- !u!1 &706427046
 GameObject:
   m_ObjectHideFlags: 0
@@ -10684,6 +10678,13 @@ MonoBehaviour:
   - {fileID: 527500613}
   - {fileID: 544145204}
   - {fileID: 1208429057}
+  ClientsTimeBar:
+  - {fileID: 336866393}
+  - {fileID: 517861794}
+  - {fileID: 51356056}
+  - {fileID: 991274048}
+  - {fileID: 2137167850}
+  numbersToChooseFrom: 0100000002000000030000000400000005000000
 --- !u!114 &1701982302
 MonoBehaviour:
   m_ObjectHideFlags: 0

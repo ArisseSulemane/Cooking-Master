@@ -7,7 +7,7 @@ public class SaladGive1 : MonoBehaviour
    
 
 
-    public int clientCombination1,clientCombination2,clientCombination3,clientCombination4,clientCombination5,plates;
+    public static  int clientCombination1,clientCombination2,clientCombination3,clientCombination4,clientCombination5,plates;
     public GameObject clientPlate1,clientPlate2,clientPlate3,clientPlate4,clientPlate5,playerPlateMove;
     public GameObject [] vegetablesInThePlate1;
     public GameObject [] vegetablesInThePlate2;
@@ -16,8 +16,9 @@ public class SaladGive1 : MonoBehaviour
     public GameObject [] vegetablesInThePlate5;
     public GameObject [] vegetablesInMovePlate;
     public GameObject [] vegetablesInStaticPlate;
-    public string  saladCombination;
-    public bool GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
+    public GameObject [] ClientsTimersUi;
+    public static string  saladCombination;
+    public static bool GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
     void Start()
     {
     GiveSaladClit1=false;
@@ -55,6 +56,8 @@ public class SaladGive1 : MonoBehaviour
     plates=0;
     ClientsTimers.satisfied1=true;
     PlayerOne.Score=PlayerOne.Score+10;
+    //disable UI timer bar for client1
+    ClientsTimersUi[0].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit1=false;
     }
@@ -79,7 +82,9 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
-    Debug.Log("Cliet Is Angry wrong salad"); 
+    Debug.Log("Cliet Is Angry wrong salad");
+     //disable UI timer bar for client1
+    ClientsTimersUi[0].SetActive(false); 
     GiveSaladClit1=false; 
     }
     //give salad2
@@ -103,6 +108,8 @@ public class SaladGive1 : MonoBehaviour
     plates=0;
     ClientsTimers.satisfied2=true;
     PlayerOne.Score=PlayerOne.Score+10;
+    //disable UI timer bar for client2
+    ClientsTimersUi[1].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit2=false;
     } if(GiveSaladClit1==true && saladCombination!=clientCombination2.ToString()){
@@ -126,7 +133,9 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
-    Debug.Log("Cliet Is Angry wrong salad"); 
+    Debug.Log("Cliet Is Angry wrong salad");
+     //disable UI timer bar for client2
+    ClientsTimersUi[1].SetActive(false); 
     GiveSaladClit2=false; 
     }
         //give salad3
@@ -150,6 +159,8 @@ public class SaladGive1 : MonoBehaviour
     plates=0;
     ClientsTimers.satisfied3=true;
     PlayerOne.Score=PlayerOne.Score+10;
+    //disable UI timer bar for client3
+    ClientsTimersUi[2].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit3=false;
     } if(GiveSaladClit3==true && saladCombination!=clientCombination3.ToString()){
@@ -173,7 +184,9 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
-    Debug.Log("Cliet Is Angry wrong salad"); 
+    Debug.Log("Cliet Is Angry wrong salad");
+     //disable UI timer bar for client3
+    ClientsTimersUi[2].SetActive(false); 
     GiveSaladClit3=false; 
     }
     //give salad4
@@ -197,6 +210,8 @@ public class SaladGive1 : MonoBehaviour
     plates=0;
     ClientsTimers.satisfied4=true;
     PlayerOne.Score=PlayerOne.Score+10;
+    //disable UI timer bar for client4
+    ClientsTimersUi[3].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit4=false;
     } if(GiveSaladClit1==true && saladCombination!=clientCombination4.ToString()){
@@ -220,7 +235,9 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
-    Debug.Log("Cliet Is Angry wrong salad"); 
+    Debug.Log("Cliet Is Angry wrong salad");
+     //disable UI timer bar for client4
+    ClientsTimersUi[3].SetActive(false); 
     GiveSaladClit4=false; 
     }
         //give salad5
@@ -244,6 +261,8 @@ public class SaladGive1 : MonoBehaviour
     plates=0;
     ClientsTimers.satisfied5=true;
     PlayerOne.Score=PlayerOne.Score+10;
+    //disable UI timer bar for client5
+    ClientsTimersUi[4].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit5=false;
     } if(GiveSaladClit1==true && saladCombination!=clientCombination5.ToString()){
@@ -267,7 +286,9 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
-    Debug.Log("Cliet Is Angry wrong salad"); 
+    Debug.Log("Cliet Is Angry wrong salad");
+    //disable UI timer bar for client5
+    ClientsTimersUi[4].SetActive(false); 
     GiveSaladClit5=false; 
     }
 
