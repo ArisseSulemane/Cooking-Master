@@ -29,6 +29,18 @@ public class ClientsTimers : MonoBehaviour
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     Debug.Log("new client is active");
     SaladGive1.GiveSaladClit1=false;
+    //reset all status of SaladControl
+     SaladControl.picked1Player1=true;
+     SaladControl.picked2Player1=false;
+     SaladControl.picked3Player1=false;
+     SaladControl.thirdVegetable=false;
+     SaladControl.vegectable1=0;
+     SaladControl.vegectable2=0;
+     SaladControl.vegectable3=0;
+     SaladControl.timeChop=0;
+     SaladControl.chopVegSlot=0;
+     SaladControl.chopcount=0;
+     SaladControl.vegetablesCounter=0;
     }
       //remove client 2 from list
     if(SaladGive1.GiveSaladClit2==true && SaladGive1.saladCombination==SaladGive1.clientCombination2.ToString()){
@@ -36,20 +48,56 @@ public class ClientsTimers : MonoBehaviour
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit2=false;
+      //reset all status of SaladControl
+     SaladControl.picked1Player1=true;
+     SaladControl.picked2Player1=false;
+     SaladControl.picked3Player1=false;
+     SaladControl.thirdVegetable=false;
+     SaladControl.vegectable1=0;
+     SaladControl.vegectable2=0;
+     SaladControl.vegectable3=0;
+     SaladControl.timeChop=0;
+     SaladControl.chopVegSlot=0;
+     SaladControl.chopcount=0;
+     SaladControl.vegetablesCounter=0;
     }
       //remove client 1 from list
-    if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
-    numbersToChooseFrom.Remove(3);
-    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
+     numbersToChooseFrom.Remove(3);
+     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit3=false;
+      //reset all status of SaladControl
+     SaladControl.picked1Player1=true;
+     SaladControl.picked2Player1=false;
+     SaladControl.picked3Player1=false;
+     SaladControl.thirdVegetable=false;
+     SaladControl.vegectable1=0;
+     SaladControl.vegectable2=0;
+     SaladControl.vegectable3=0;
+     SaladControl.timeChop=0;
+     SaladControl.chopVegSlot=0;
+     SaladControl.chopcount=0;
+     SaladControl.vegetablesCounter=0;
     }
       //remove client 1 from list
     if(SaladGive1.GiveSaladClit4==true && SaladGive1.saladCombination==SaladGive1.clientCombination4.ToString()){
-    numbersToChooseFrom.Remove(4);
-    client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
+     numbersToChooseFrom.Remove(4);
+     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit4=false;
+      //reset all status of SaladControl
+     SaladControl.picked1Player1=true;
+     SaladControl.picked2Player1=false;
+     SaladControl.picked3Player1=false;
+     SaladControl.thirdVegetable=false;
+     SaladControl.vegectable1=0;
+     SaladControl.vegectable2=0;
+     SaladControl.vegectable3=0;
+     SaladControl.timeChop=0;
+     SaladControl.chopVegSlot=0;
+     SaladControl.chopcount=0;
+     SaladControl.vegetablesCounter=0;
     }
       //remove client 1 from list
      if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
@@ -57,6 +105,19 @@ public class ClientsTimers : MonoBehaviour
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit5=false;
+      //reset all status of SaladControl
+     SaladControl.picked1Player1=true;
+     SaladControl.picked2Player1=false;
+     SaladControl.picked3Player1=false;
+     SaladControl.thirdVegetable=false;
+     SaladControl.vegectable1=0;
+     SaladControl.vegectable2=0;
+     SaladControl.vegectable3=0;
+     SaladControl.timeChop=0;
+     SaladControl.chopVegSlot=0;
+     SaladControl.chopcount=0;
+     SaladControl.vegetablesCounter=0;
+     SaladControl.thirdVegetable=false;
     }
     
     if(client==1)

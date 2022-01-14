@@ -7,12 +7,12 @@ public class SaladControl : MonoBehaviour
 {
    
    //bool variables to contol wich slot is being used
-   public bool picked1Player1,picked2Player1,picked3Player1,chopVeg,thirdVegetable;
+   public static bool picked1Player1,picked2Player1,picked3Player1,chopVeg,thirdVegetable;
    //bool variables to contol wich vegetable player picked
    public static int  vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
    public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
-   public float timeChop;
+   public  static float timeChop;
    public GameObject timerUI;
    public Slider playerOneTimerChopUI;
    public GameObject [] SaladMix; 
@@ -21,6 +21,7 @@ public class SaladControl : MonoBehaviour
    picked1Player1=true;
    picked2Player1=false;
    picked3Player1=false;
+   thirdVegetable=false;
    thirdVegetable=false;
    vegectable1=0;
    vegectable2=0;
@@ -117,8 +118,8 @@ public class SaladControl : MonoBehaviour
   picked1Player1=false;
   }
   //verify name of the vegetable to take
-  if(thirdVegetable==false && picked2Player1==true && picked1Player1==false && picked1Player1==false  && Input.GetKeyDown("e")){
-//if player pick vegetable f will change the UI icon nad give value vegetable2
+  if(thirdVegetable==false && picked2Player1==true && picked1Player1==false && picked3Player1==false  && Input.GetKeyDown("e")){
+//if player pick vegetable f will change the UI icon and give value vegetable2
   if (col.gameObject.tag == "a"){
   vegectable2=1;
   image2.GetComponent<Image> ().sprite = a;
@@ -143,7 +144,7 @@ public class SaladControl : MonoBehaviour
   vegectable2=5;
   image2.GetComponent<Image> ().sprite = e;
   }
-  //if player pick vegetable f will change the UI icon nad give value vegetable2
+  //if player pick vegetable f will change the UI icon and give value vegetable2
   if (col.gameObject.tag == "f"){
   vegectable2=6;
   image2.GetComponent<Image> ().sprite = f;
