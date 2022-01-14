@@ -70,7 +70,6 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
     Debug.Log("Cliet Is Satisfied");
     }
      if(GiveSaladClit1==true && saladCombination!=clientCombination1.ToString()){
@@ -109,7 +108,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+     
     }
     //give salad2
     if(GiveSaladClit2==true && saladCombination==clientCombination2.ToString()){
@@ -184,7 +183,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+     
     }
         //give salad3
     if(GiveSaladClit3==true && saladCombination==clientCombination3.ToString()){
@@ -259,7 +258,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+     
     }
     //give salad4
     if(GiveSaladClit4==true && saladCombination==clientCombination4.ToString()){
@@ -334,7 +333,7 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+     
     }
         //give salad5
     if(GiveSaladClit5==true && saladCombination==clientCombination5.ToString()){
@@ -397,7 +396,7 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false); 
-      //reset all status of SaladControl
+    //reset all status of SaladControl
      SaladControl.picked1Player1=true;
      SaladControl.picked2Player1=false;
      SaladControl.picked3Player1=false;
@@ -409,7 +408,6 @@ public class SaladGive1 : MonoBehaviour
      SaladControl.chopVegSlot=0;
      SaladControl.chopcount=0;
      SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
     }
     }
 
@@ -439,7 +437,6 @@ public class SaladGive1 : MonoBehaviour
     }
     //client 2 give food
     if(col.gameObject.tag == "client2" && Input.GetKeyDown("e") && plates==1){
-    GiveSaladClit2=true; 
     }
     //client 3 give food
     if(col.gameObject.tag == "client3" && Input.GetKeyDown("e") && plates==1){
@@ -452,7 +449,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //client 5 give food
     if(col.gameObject.tag == "client5" && Input.GetKeyDown("e") && plates==1){
-    GiveSaladClit5=true;
+     GiveSaladClit5=true;
     }
 
 

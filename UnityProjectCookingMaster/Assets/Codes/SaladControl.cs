@@ -112,14 +112,16 @@ public class SaladControl : MonoBehaviour
   vegectable1=6;
   image1.GetComponent<Image> ().sprite = f;
   }
+  Debug.Log("slot 1 active");
   vegetablesCounter=1;
   picked2Player1=true;
   picked3Player1=false;
   picked1Player1=false;
   }
+
   //verify name of the vegetable to take
   if(thirdVegetable==false && picked2Player1==true && picked1Player1==false && picked3Player1==false  && Input.GetKeyDown("e")){
-//if player pick vegetable f will change the UI icon and give value vegetable2
+  //if player pick vegetable f will change the UI icon and give value vegetable2
   if (col.gameObject.tag == "a"){
   vegectable2=1;
   image2.GetComponent<Image> ().sprite = a;
@@ -149,6 +151,7 @@ public class SaladControl : MonoBehaviour
   vegectable2=6;
   image2.GetComponent<Image> ().sprite = f;
   }
+  Debug.Log("slot 2 active");
   vegetablesCounter=2;
   picked3Player1=true;
   picked1Player1=false;
@@ -161,28 +164,39 @@ public class SaladControl : MonoBehaviour
   vegectable3=1;
   image1.GetComponent<Image> ().sprite = a;
   picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
   if (col.gameObject.tag == "b"){
   vegectable3=2;
   image1.GetComponent<Image> ().sprite = b;
+  picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
   if (col.gameObject.tag == "c"){
   vegectable3=3;
   image1.GetComponent<Image> ().sprite = c;
+  picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
   if (col.gameObject.tag == "d"){
   vegectable3=4;
   image1.GetComponent<Image> ().sprite = d;
+  picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
 
   if (col.gameObject.tag == "e"){
   vegectable3=5;
   image1.GetComponent<Image> ().sprite = e;
+  picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
 
   if (col.gameObject.tag == "f"){
   vegectable3=6;
   image1.GetComponent<Image> ().sprite = f;
+  picked3Player1=true;
+  Debug.Log("slot 3 active");
   }
   vegetablesCounter=3;
   picked1Player1=false;
