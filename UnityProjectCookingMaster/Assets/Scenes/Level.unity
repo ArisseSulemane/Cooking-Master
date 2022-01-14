@@ -10671,11 +10671,19 @@ MonoBehaviour:
   timer2: 0
   timer3: 0
   timer4: 0
+  timer5: 0
   client: 0
   slider1: {fileID: 336866395}
   slider2: {fileID: 517861796}
   slider3: {fileID: 51356058}
   slider4: {fileID: 991274050}
+  slider5: {fileID: 2137167852}
+  Clients:
+  - {fileID: 1132764320}
+  - {fileID: 602802152}
+  - {fileID: 527500613}
+  - {fileID: 544145204}
+  - {fileID: 1208429057}
 --- !u!114 &1701982302
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //-------------------------------------------------------------
     plates=0;
+    ClientsTimers.satisfied1=true;
     PlayerOne.Score=PlayerOne.Score+10;
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit1=false;
@@ -100,6 +101,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //-------------------------------------------------------------
     plates=0;
+    ClientsTimers.satisfied2=true;
     PlayerOne.Score=PlayerOne.Score+10;
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit2=false;
@@ -133,7 +135,7 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate2.SetActive(true);
+    clientPlate3.SetActive(true);
     //-------------------------------------------------------------
     if(SaladControl.vegectable3==0){
     vegetablesInThePlate3[SaladControl.vegectable1].SetActive(true);
@@ -146,10 +148,11 @@ public class SaladGive1 : MonoBehaviour
     }
     //-------------------------------------------------------------
     plates=0;
+    ClientsTimers.satisfied3=true;
     PlayerOne.Score=PlayerOne.Score+10;
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit3=false;
-    } if(GiveSaladClit1==true && saladCombination!=clientCombination3.ToString()){
+    } if(GiveSaladClit3==true && saladCombination!=clientCombination3.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
@@ -192,6 +195,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //-------------------------------------------------------------
     plates=0;
+    ClientsTimers.satisfied4=true;
     PlayerOne.Score=PlayerOne.Score+10;
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit4=false;
@@ -238,6 +242,7 @@ public class SaladGive1 : MonoBehaviour
     }
     //-------------------------------------------------------------
     plates=0;
+    ClientsTimers.satisfied5=true;
     PlayerOne.Score=PlayerOne.Score+10;
     Debug.Log("Cliet Is Satisfied");
     GiveSaladClit5=false;
