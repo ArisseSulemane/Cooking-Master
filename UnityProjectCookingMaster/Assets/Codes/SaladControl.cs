@@ -7,9 +7,9 @@ public class SaladControl : MonoBehaviour
 {
    
    //bool variables to contol wich slot is being used
-   public static bool aux,picked1Player1,picked2Player1,picked3Player1,chopVeg,secondVegetable,thirdVegetable;
+   public static bool picked1Player1,picked2Player1,picked3Player1,chopVeg,secondVegetable,thirdVegetable;
    //bool variables to contol wich vegetable player picked
-   public static int  vegetableIndex,vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
+   public static int  slot,vegetableIndex,vegectable1,vegectable2,vegectable3,chopVegSlot,vegetablesCounter,chopcount;
    public Sprite a,b,c,d,e,f,empty;
    public Image image1,image2;
    public  static float timeChop;
@@ -33,7 +33,7 @@ public class SaladControl : MonoBehaviour
    chopcount=0;
    vegetablesCounter=0;
    vegetableIndex=0;
-   aux=false;
+   slot=0;
    }
     
     void Update(){
@@ -82,110 +82,176 @@ public class SaladControl : MonoBehaviour
     }
 
     //put new vegetable in UI
-    if(picked1Player1==true && aux==false){
+    if(picked1Player1==true && slot==1){
     vegectable1=vegetableIndex;
     image1.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
     vegetableIndex=0;
+    Debug.Log("slot1 active"+picked1Player1);
     picked1Player1=false;
-    aux=true;
-    picked2Player1=false;
+    picked2Player1=true;
     }
-     if(picked2Player1==true && aux==false){
+
+     if(picked2Player1==true && slot==2){
     vegectable2=vegetableIndex;
     image2.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
     vegetableIndex=0;
+    Debug.Log("slot2 active"+picked1Player1);
+    picked1Player1=false;
     picked2Player1=false;
-    aux=true;
     picked3Player1=true;
     }
 
-    if(picked3Player1==true){
+    if(picked3Player1==true && slot==3){
     vegectable3=vegetableIndex;
     image1.GetComponent<Image> ().sprite = spritesIndex[vegetableIndex];
     vegetableIndex=0;
+    Debug.Log("slot3 active"+picked1Player1);
+    picked1Player1=false;
+    picked2Player1=false;
     picked3Player1=false;
     }
     }
 
   void OnTriggerStay(Collider col){
   //verify if slot one is empty to take one vegetable
-  if(picked1Player1=true  && Input.GetKeyDown("e")){
+  if(picked1Player1==false && slot==0 && Input.GetKeyDown("e")){
   //verify name of the vegetable to take
-  if(col.gameObject.tag == "a"){
-  vegetableIndex=1;
-  picked1Player1=true;
-  aux=false;
+   if(col.gameObject.tag == "a"){
+   vegetableIndex=1;
+   picked1Player1=true;
+   slot=1;
+   Debug.Log("take one active");
   }
-
    if(col.gameObject.tag == "b"){
   //verify name of the vegetable to take
   vegetableIndex=2;
   picked1Player1=true;
-  aux=false;
+  slot=1;
+   Debug.Log("take one active");
   }
    if(col.gameObject.tag == "c"){
   //verify name of the vegetable to take
   vegetableIndex=3;
   picked1Player1=true;
-  aux=false;
+  slot=1;
+   Debug.Log("take one active");
   }
   if(col.gameObject.tag == "d"){
   //verify name of the vegetable to take
   vegetableIndex=4;
   picked1Player1=true;
-  aux=false;
+  slot=1;
+   Debug.Log("take one active");
   }
    if(col.gameObject.tag == "e"){
   //verify name of the vegetable to take
    vegetableIndex=5;
    picked1Player1=true;
-   aux=false;
+   slot=1;
+    Debug.Log("take one active");
   }
    if(col.gameObject.tag == "f"){
   //verify name of the vegetable to take
   vegetableIndex=6;
   picked1Player1=true;
-  aux=false;
+  slot=1;
+   Debug.Log("take one active");
+  }
   }
 
+//======================================================
  //verify if slot one is empty to take one vegetable
-  if(picked2Player1==true && Input.GetKeyDown("e")){
+  if(picked2Player1==true && slot==1 && Input.GetKeyDown("e")){
+    
   //verify name of the vegetable to take
   if(col.gameObject.tag == "a"){
   vegetableIndex=1;
   picked2Player1=true;
-  aux=false;
+  slot=2;
+   Debug.Log("take two active");
   }
-
    if(col.gameObject.tag == "b"){
   //verify name of the vegetable to take
-  picked2Player1=true;
   vegetableIndex=2;
-  aux=false;
+   picked2Player1=true;
+  slot=2;
+   Debug.Log("take two active");
   }
    if(col.gameObject.tag == "c"){
   //verify name of the vegetable to take
-  picked2Player1=true;
   vegetableIndex=3;
-  aux=false;
+   picked2Player1=true;
+  slot=2;
+   Debug.Log("take two active");
   }
   if(col.gameObject.tag == "d"){
   //verify name of the vegetable to take
-  picked2Player1=true;
   vegetableIndex=4;
-  aux=false;
+  picked2Player1=true;
+  slot=2;
+   Debug.Log("take two active");
   }
    if(col.gameObject.tag == "e"){
   //verify name of the vegetable to take
-  picked2Player1=true;
   vegetableIndex=5;
-  aux=false;
+   picked2Player1=true;
+  slot=2;
+   Debug.Log("take two active");
   }
    if(col.gameObject.tag == "f"){
   //verify name of the vegetable to take
-  picked2Player1=true;
   vegetableIndex=6;
-  aux=false;
+  picked2Player1=true;
+  slot=2;
+  Debug.Log("take two active");
+  }
+  }
+
+
+  //======================================================
+ //verify if slot one is empty to take one vegetable
+  if(picked3Player1==true && slot==2 && Input.GetKeyDown("e")){ 
+  //verify name of the vegetable to take
+  if(col.gameObject.tag == "a"){
+  vegetableIndex=1;
+  picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
+  }
+   if(col.gameObject.tag == "b"){
+  //verify name of the vegetable to take
+  vegetableIndex=2;
+  picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
+  }
+   if(col.gameObject.tag == "c"){
+  //verify name of the vegetable to take
+  vegetableIndex=3;
+   picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
+  }
+  if(col.gameObject.tag == "d"){
+  //verify name of the vegetable to take
+  vegetableIndex=4;
+  picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
+  }
+   if(col.gameObject.tag == "e"){
+  //verify name of the vegetable to take
+  vegetableIndex=5;
+   picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
+  }
+   if(col.gameObject.tag == "f"){
+  //verify name of the vegetable to take
+  vegetableIndex=6;
+  picked3Player1=true;
+  slot=3;
+  Debug.Log("take tree active");
   }
   }
 
@@ -205,5 +271,5 @@ public class SaladControl : MonoBehaviour
   
  
   }
-}
+
 

@@ -18,7 +18,7 @@ public class SaladGive1 : MonoBehaviour
     public GameObject [] vegetablesInStaticPlate;
     public GameObject [] ClientsTimersUi;
     public static string  saladCombination;
-    public static bool GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
+    public static bool reseted,GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
     void Start()
     {
     GiveSaladClit1=false;
@@ -58,19 +58,12 @@ public class SaladGive1 : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score+10;
     //disable UI timer bar for client1
     ClientsTimersUi[0].SetActive(false);
-    //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
     Debug.Log("Cliet Is Satisfied");
+    reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
+  
     }
      if(GiveSaladClit1==true && saladCombination!=clientCombination1.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
@@ -94,21 +87,12 @@ public class SaladGive1 : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Debug.Log("Cliet Is Angry wrong salad");
-     //disable UI timer bar for client1
-    ClientsTimersUi[0].SetActive(false); 
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     
+    //disable UI timer bar for client1
+    ClientsTimersUi[0].SetActive(false);
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     }
     //give salad2
     if(GiveSaladClit2==true && saladCombination==clientCombination2.ToString()){
@@ -134,19 +118,10 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client2
     ClientsTimersUi[1].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     } if(GiveSaladClit2==true && saladCombination!=clientCombination2.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -170,20 +145,11 @@ public class SaladGive1 : MonoBehaviour
     }
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client2
-    ClientsTimersUi[1].SetActive(false); 
-    //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     
+    ClientsTimersUi[1].SetActive(false);
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     }
         //give salad3
     if(GiveSaladClit3==true && saladCombination==clientCombination3.ToString()){
@@ -209,19 +175,10 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client3
     ClientsTimersUi[2].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     } if(GiveSaladClit3==true && saladCombination!=clientCombination3.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -245,20 +202,11 @@ public class SaladGive1 : MonoBehaviour
     }
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client3
-    ClientsTimersUi[2].SetActive(false); 
-       //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     
+    ClientsTimersUi[2].SetActive(false);
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     }
     //give salad4
     if(GiveSaladClit4==true && saladCombination==clientCombination4.ToString()){
@@ -284,19 +232,10 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     } if(GiveSaladClit4==true && saladCombination!=clientCombination4.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -321,19 +260,10 @@ public class SaladGive1 : MonoBehaviour
     Debug.Log("Cliet Is Angry wrong salad");
      //disable UI timer bar for client4
     ClientsTimersUi[3].SetActive(false); 
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     }
         //give salad5
     if(GiveSaladClit5==true && saladCombination==clientCombination5.ToString()){
@@ -359,19 +289,10 @@ public class SaladGive1 : MonoBehaviour
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false);
     Debug.Log("Cliet Is Satisfied");
-      //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
-     SaladControl.thirdVegetable=false;
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     } if(GiveSaladClit1==true && saladCombination!=clientCombination5.ToString()){
     vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
@@ -394,22 +315,16 @@ public class SaladGive1 : MonoBehaviour
     PlayerOne.Score=PlayerOne.Score-10;
     }
     Debug.Log("Cliet Is Angry wrong salad");
+      reseted=true;
+    if(reseted==true){
+    ResetAll();
+    }
     //disable UI timer bar for client5
     ClientsTimersUi[4].SetActive(false); 
-    //reset all status of SaladControl
-     SaladControl.picked1Player1=true;
-     SaladControl.picked2Player1=false;
-     SaladControl.picked3Player1=false;
-     SaladControl.thirdVegetable=false;
-     SaladControl.vegectable1=0;
-     SaladControl.vegectable2=0;
-     SaladControl.vegectable3=0;
-     SaladControl.timeChop=0;
-     SaladControl.chopVegSlot=0;
-     SaladControl.chopcount=0;
-     SaladControl.vegetablesCounter=0;
     }
     }
+
+
 
     void OnTriggerStay(Collider col){
     //take plate to client
@@ -456,6 +371,33 @@ public class SaladGive1 : MonoBehaviour
 
     }
 
+
+
+  public static void ResetAll(){
+  //reset all status of SaladControl
+   SaladControl.picked1Player1=false;
+   SaladControl.picked2Player1=false;
+   SaladControl.picked3Player1=false;
+   SaladControl.thirdVegetable=false;
+   SaladControl.thirdVegetable=false;
+   SaladControl.secondVegetable=false;
+   SaladControl.vegectable1=0;
+   SaladControl.vegectable2=0;
+   SaladControl.vegectable3=0;
+   SaladControl.timeChop=0;
+   SaladControl.chopVegSlot=0;
+   SaladControl.chopcount=0;
+   SaladControl.vegetablesCounter=0;
+   SaladControl.vegetableIndex=0;
+   SaladControl.slot=0;
+   Debug.Log("picked1"+SaladControl.picked1Player1);
+   Debug.Log("picked2"+SaladControl.picked2Player1);
+   Debug.Log("pickd3"+SaladControl.picked3Player1);
+   Debug.Log("slot"+SaladControl.slot);
+   reseted=false;
+  
+   
+  }
    
    
 }
