@@ -10,7 +10,7 @@ public class ClientsTimers : MonoBehaviour
     public Slider slider1,slider2,slider3,slider4,slider5;
     public GameObject [] Clients,ClientsTimeBar,powersUp;
     public static bool satisfied1,satisfied2,satisfied3,satisfied4,satisfied5;
-    public List<int> numbersToChooseFrom = new List<int>(new int[]{1,2,3,4,5});
+    public List<int> numbersToChooseFrom = new List<int>(new int[]{1,2,3,4,5,6});
 
     void Start(){
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -146,6 +146,14 @@ public class ClientsTimers : MonoBehaviour
     }
     // SATISFIED CLIENTS
     if(satisfied1==true && timer1<=100){
+         //enable powers on scene
+      if(satisfied1==true && timer1<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Debug.Log(Powers.PlayerPrevilege);
+      Powers.PlayerPrevilege="1";
+      }
     ClientsTimeBar[0].SetActive(false);
     numbersToChooseFrom.Remove(1);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -154,6 +162,14 @@ public class ClientsTimers : MonoBehaviour
     satisfied1=false;
     }
     if(satisfied2==true && timer2<=100){
+         //enable powers on scene
+      if(satisfied2==true && timer2<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Powers.PlayerPrevilege="1";
+      Debug.Log(Powers.PlayerPrevilege);
+      }
     ClientsTimeBar[1].SetActive(false);
     numbersToChooseFrom.Remove(2);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -162,6 +178,14 @@ public class ClientsTimers : MonoBehaviour
     satisfied2=false;
     }
     if(satisfied3==true && timer3<=100){
+         //enable powers on scene
+      if(satisfied3==true && timer3<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Powers.PlayerPrevilege="1";
+      Debug.Log(Powers.PlayerPrevilege);
+      }
     ClientsTimeBar[2].SetActive(false);
     numbersToChooseFrom.Remove(3);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -170,6 +194,14 @@ public class ClientsTimers : MonoBehaviour
     satisfied3=false;
     }
     if(satisfied4==true && timer4<=100){
+         //enable powers on scene
+      if(satisfied4==true && timer4<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Powers.PlayerPrevilege="1";
+      Debug.Log(Powers.PlayerPrevilege);
+      }
     ClientsTimeBar[3].SetActive(false);
     numbersToChooseFrom.Remove(4);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -178,6 +210,14 @@ public class ClientsTimers : MonoBehaviour
     satisfied4=false;
     }
     if(satisfied5==true && timer5<=100){
+         //enable powers on scene
+      if(satisfied5==true && timer5<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Powers.PlayerPrevilege="1";
+      Debug.Log(Powers.PlayerPrevilege);
+      }
     ClientsTimeBar[4].SetActive(false);
     numbersToChooseFrom.Remove(5);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -187,13 +227,7 @@ public class ClientsTimers : MonoBehaviour
     }
 
 
-      //enable powers on scene
-      if(satisfied1==true && timer1<=70 || satisfied2==true && timer2<=70 || satisfied3==true && timer3<=70 || satisfied4==true && timer4<=70 || satisfied5==true && timer5<=70){
-      powersUp[0].SetActive(true);
-      powersUp[1].SetActive(true);
-      powersUp[2].SetActive(true);
-      Powers.PlayerPrevilege=1;
-      }
+   
     }
 
 

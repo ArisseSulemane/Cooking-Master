@@ -353,24 +353,24 @@ public class SaladGive1 : MonoBehaviour
 
 
     //client 1 give food
-    if(col.gameObject.tag == "client1" && Input.GetKeyDown("e") && plates==1){
+    if(col.gameObject.tag == "client1" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit1=true; 
     }
     //client 2 give food
-    if(col.gameObject.tag == "client2" && Input.GetKeyDown("e") && plates==1){
+    if(col.gameObject.tag == "client2" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit2=true;
     }
     //client 3 give food
-    if(col.gameObject.tag == "client3" && Input.GetKeyDown("e") && plates==1){
+    if(col.gameObject.tag == "client3" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit3=true;
     }
 
     //client 4 give food
-    if(col.gameObject.tag == "client4" && Input.GetKeyDown("e") && plates==1){
+    if(col.gameObject.tag == "client4" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit4=true;
     }
     //client 5 give food
-    if(col.gameObject.tag == "client5" && Input.GetKeyDown("e") && plates==1){
+    if(col.gameObject.tag == "client5" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
      GiveSaladClit5=true;
     }
 

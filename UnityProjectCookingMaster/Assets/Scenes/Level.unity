@@ -803,13 +803,14 @@ GameObject:
   - component: {fileID: 84455608}
   - component: {fileID: 84455607}
   - component: {fileID: 84455606}
+  - component: {fileID: 84455612}
   m_Layer: 0
   m_Name: time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &84455606
 Animator:
   serializedVersion: 3
@@ -912,12 +913,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84455605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.53, y: 3.75, z: -15.8358}
+  m_LocalPosition: {x: -20.19, y: 3.75, z: -26.18}
   m_LocalScale: {x: 5.0566, y: 0.66687375, z: 5.0566}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84455612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84455605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f0edec1e393674d8ba177e39a28a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  score: 0
+  time: 1
 --- !u!1 &101100774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,13 +2932,14 @@ GameObject:
   - component: {fileID: 498937291}
   - component: {fileID: 498937290}
   - component: {fileID: 498937289}
+  - component: {fileID: 498937295}
   m_Layer: 0
   m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &498937289
 Animator:
   serializedVersion: 3
@@ -3025,12 +3042,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498937288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.11, y: 3.75, z: -15.8358}
+  m_LocalPosition: {x: -0.1, y: 3.75, z: -6.2}
   m_LocalScale: {x: 5.0566, y: 0.66687375, z: 5.0566}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498937295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498937288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f0edec1e393674d8ba177e39a28a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  score: 1
+  time: 0
 --- !u!1 &510599850
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,7 +4361,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerOne: {fileID: 696059185}
-  playerVelocity: 20
   ScoreIu: {fileID: 1449315507}
 --- !u!135 &696059182
 SphereCollider:
@@ -5175,13 +5206,14 @@ GameObject:
   - component: {fileID: 809607932}
   - component: {fileID: 809607931}
   - component: {fileID: 809607930}
+  - component: {fileID: 809607936}
   m_Layer: 0
   m_Name: speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &809607930
 Animator:
   serializedVersion: 3
@@ -5284,12 +5316,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809607929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.14, y: 3.75, z: -15.8358}
+  m_LocalPosition: {x: 11.1, y: 3.75, z: -19.3}
   m_LocalScale: {x: 5.0566, y: 0.66687375, z: 5.0566}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809607936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809607929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f0edec1e393674d8ba177e39a28a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  score: 0
+  time: 0
 --- !u!1 &809739805
 GameObject:
   m_ObjectHideFlags: 0
@@ -12059,6 +12106,10 @@ MonoBehaviour:
   - {fileID: 51356056}
   - {fileID: 991274048}
   - {fileID: 2137167850}
+  powersUp:
+  - {fileID: 84455605}
+  - {fileID: 498937288}
+  - {fileID: 809607929}
   numbersToChooseFrom: 0100000002000000030000000400000005000000
 --- !u!114 &1701982302
 MonoBehaviour:

@@ -16,16 +16,16 @@ public class PlayerOne : MonoBehaviour
     public Text ScoreIu;
     void Start(){
     Score=250; 
-    velocityTimer=10; 
+    playerVelocity=10; 
     }
 
 void Update(){
     //increase speed of player
 if(velocityTimer>0){
 velocityTimer=velocityTimer-1*Time.deltaTime;
-velocityTimer=velocityTimer+20;
+playerVelocity=20;
 }else{
-velocityTimer=10;
+playerVelocity=10;
 }
 
 ScoreIu.text="Score: "+Score;

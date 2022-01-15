@@ -266,7 +266,7 @@ public class SaladControl : MonoBehaviour
 
  //if player stay in the table and press e will disable the moviments for while and will start chopveg
   if(chopVeg==false){
-  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e")){
+  if (col.gameObject.tag == "table1" && Input.GetKeyDown("e") &&  SaladControl.vegectable1!=0 &&  SaladControl.vegectable2!=0){
   if(vegetablesCounter==2){
   thirdVegetable=true;
   }
