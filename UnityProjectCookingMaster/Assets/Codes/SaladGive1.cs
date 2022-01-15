@@ -317,7 +317,8 @@ public class SaladGive1 : MonoBehaviour
     }
     //Trash  Salad
     //take plate to client
-    if(col.gameObject.tag == "plate1" && Input.GetKeyDown("q")){
+    if(col.gameObject.tag == "plate1" && Input.GetKeyDown("q") && plates==1){
+    playerPlateMove.SetActive(false); 
     trashplate.SetActive(true);
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
@@ -336,7 +337,7 @@ public class SaladGive1 : MonoBehaviour
     TrashSaladVegetables[SaladControl.vegectable2].SetActive(true);
     TrashSaladVegetables[SaladControl.vegectable3].SetActive(true);
     }
-
+    //disable plate and vegetables on cooker table
     if(SaladControl.vegectable3==0){
     vegetablesInStaticPlate[SaladControl.vegectable1].SetActive(false);
     vegetablesInStaticPlate[SaladControl.vegectable2].SetActive(false);
@@ -345,6 +346,16 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInStaticPlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInStaticPlate[SaladControl.vegectable3].SetActive(false);
     }
+    //disable plate and vegetables on player ands
+     if(SaladControl.vegectable3==0){
+    vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
+    vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
+    }else{
+    vegetablesInMovePlate[SaladControl.vegectable1].SetActive(false);
+    vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
+    vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
+    }
+
     ResetAll();
     Debug.Log("you take plate");
     }
