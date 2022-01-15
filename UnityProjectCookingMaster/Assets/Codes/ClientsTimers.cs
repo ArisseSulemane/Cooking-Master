@@ -8,7 +8,7 @@ public class ClientsTimers : MonoBehaviour
     public float timer1,timer2,timer3,timer4,timer5;
     public int client;
     public Slider slider1,slider2,slider3,slider4,slider5;
-    public GameObject [] Clients,ClientsTimeBar;
+    public GameObject [] Clients,ClientsTimeBar,powersUp;
     public static bool satisfied1,satisfied2,satisfied3,satisfied4,satisfied5;
     public List<int> numbersToChooseFrom = new List<int>(new int[]{1,2,3,4,5});
 
@@ -85,7 +85,7 @@ public class ClientsTimers : MonoBehaviour
     slider5.value=timer5;
     }
     //disable clients and penalize players
-    if(satisfied1==false && timer1>=50){
+    if(satisfied1==false && timer1>=100){
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -97,7 +97,7 @@ public class ClientsTimers : MonoBehaviour
     timer1=0;
     }
 
-    if(satisfied2==false && timer2>=50){
+    if(satisfied2==false && timer2>=100){
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -109,7 +109,7 @@ public class ClientsTimers : MonoBehaviour
     timer2=0;
     }
 
-    if(satisfied3==false && timer3>=50){
+    if(satisfied3==false && timer3>=100){
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -121,7 +121,7 @@ public class ClientsTimers : MonoBehaviour
     timer3=0;
     }
 
-    if(satisfied4==false && timer4>=50){
+    if(satisfied4==false && timer4>=100){
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -133,7 +133,7 @@ public class ClientsTimers : MonoBehaviour
     timer4=0;
     }
     
-    if(satisfied5==false && timer5>=50){
+    if(satisfied5==false && timer5>=100){
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -145,7 +145,7 @@ public class ClientsTimers : MonoBehaviour
     timer5=0;
     }
     // SATISFIED CLIENTS
-    if(satisfied1==true && timer1<=50){
+    if(satisfied1==true && timer1<=100){
     ClientsTimeBar[0].SetActive(false);
     numbersToChooseFrom.Remove(1);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -153,7 +153,7 @@ public class ClientsTimers : MonoBehaviour
     SaladGive1.ResetAll();
     satisfied1=false;
     }
-    if(satisfied2==true && timer2<=50){
+    if(satisfied2==true && timer2<=100){
     ClientsTimeBar[1].SetActive(false);
     numbersToChooseFrom.Remove(2);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -161,7 +161,7 @@ public class ClientsTimers : MonoBehaviour
     SaladGive1.ResetAll();
     satisfied2=false;
     }
-    if(satisfied3==true && timer3<=50){
+    if(satisfied3==true && timer3<=100){
     ClientsTimeBar[2].SetActive(false);
     numbersToChooseFrom.Remove(3);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -169,7 +169,7 @@ public class ClientsTimers : MonoBehaviour
     SaladGive1.ResetAll();
     satisfied3=false;
     }
-    if(satisfied4==true && timer4<=50){
+    if(satisfied4==true && timer4<=100){
     ClientsTimeBar[3].SetActive(false);
     numbersToChooseFrom.Remove(4);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -177,7 +177,7 @@ public class ClientsTimers : MonoBehaviour
     SaladGive1.ResetAll();
     satisfied4=false;
     }
-    if(satisfied5==true && timer5<=50){
+    if(satisfied5==true && timer5<=100){
     ClientsTimeBar[4].SetActive(false);
     numbersToChooseFrom.Remove(5);
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -185,7 +185,15 @@ public class ClientsTimers : MonoBehaviour
     SaladGive1.ResetAll();
     satisfied5=false;
     }
- 
+
+
+      //enable powers on scene
+      if(satisfied1==true && timer1<=70 || satisfied2==true && timer2<=70 || satisfied3==true && timer3<=70 || satisfied4==true && timer4<=70 || satisfied5==true && timer5<=70){
+      powersUp[0].SetActive(true);
+      powersUp[1].SetActive(true);
+      powersUp[2].SetActive(true);
+      Powers.PlayerPrevilege=1;
+      }
     }
 
 

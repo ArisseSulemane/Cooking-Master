@@ -10,12 +10,24 @@ public class PlayerOne : MonoBehaviour
     public Transform playerOne;
     //velocity player moves variable
     public static int Score;
-    public float playerVelocity;
+    public static float playerVelocity;
+    public static float velocityTimer;
+
     public Text ScoreIu;
     void Start(){
-        
+    Score=250; 
+    velocityTimer=10; 
     }
+
 void Update(){
+    //increase speed of player
+if(velocityTimer>0){
+velocityTimer=velocityTimer-1*Time.deltaTime;
+velocityTimer=velocityTimer+20;
+}else{
+velocityTimer=10;
+}
+
 ScoreIu.text="Score: "+Score;
 //all the keys to move around the player in scene with limits 
 if(Input.GetKey("w") && playerOne.position.z < -0.3)

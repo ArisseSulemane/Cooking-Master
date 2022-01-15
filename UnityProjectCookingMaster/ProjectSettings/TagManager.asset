@@ -21,6 +21,7 @@ TagManager:
   - client3
   - client4
   - client5
+  - time
   layers:
   - Default
   - TransparentFX

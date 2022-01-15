@@ -6,8 +6,8 @@ public class TImerForThePlayers : MonoBehaviour
 {
 
     //variable of time 
-    static float timePlayerOne,timePlayerTwo;
-    static int timePlayerOne1,timePlayerTwo1;
+    public static float timePlayerOne,timePlayerTwo;
+    public static int timePlayerOne1,timePlayerTwo1;
     //variable of IU element;
     public Text timePlayerOneUI,timePlayerTwoUI;
     void Start(){

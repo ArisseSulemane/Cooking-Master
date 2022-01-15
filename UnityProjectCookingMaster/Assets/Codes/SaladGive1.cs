@@ -319,6 +319,10 @@ public class SaladGive1 : MonoBehaviour
     //take plate to client
     if(col.gameObject.tag == "plate1" && Input.GetKeyDown("q")){
     trashplate.SetActive(true);
+    if(PlayerOne.Score>0){
+    PlayerOne.Score=PlayerOne.Score-10;
+    Debug.Log("Your Score Was Decreased");
+    }
     //hide all vegetable in chef plate
     TrashSaladVegetables[SaladControl.vegectable1].SetActive(false);
     TrashSaladVegetables[SaladControl.vegectable2].SetActive(false);
