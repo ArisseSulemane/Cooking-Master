@@ -124,41 +124,41 @@ public class SaladControl : MonoBehaviour
   //verify if slot one is empty to take one vegetable
   if(picked1Player1==true && slot==0 && Input.GetKeyUp("e")){
   //verify name of the vegetable to take
-   if(col.gameObject.tag == "a"){
+   if(col.gameObject.tag == "a" && vegectable1==0){
    vegetableIndex=1;
    picked1Player1=true;
    slot=1;
    Debug.Log("take one active");
   }
-   if(col.gameObject.tag == "b"){
+   if(col.gameObject.tag == "b" &&  vegectable1==0){
   //verify name of the vegetable to take
   vegetableIndex=2;
   picked1Player1=true;
   slot=1;
    Debug.Log("take one active");
   }
-   if(col.gameObject.tag == "c"){
+   if(col.gameObject.tag == "c" &&  vegectable1==0){
   //verify name of the vegetable to take
   vegetableIndex=3;
   picked1Player1=true;
   slot=1;
    Debug.Log("take one active");
   }
-  if(col.gameObject.tag == "d"){
+  if(col.gameObject.tag == "d"  &&  vegectable1==0){
   //verify name of the vegetable to take
   vegetableIndex=4;
   picked1Player1=true;
   slot=1;
    Debug.Log("take one active");
   }
-   if(col.gameObject.tag == "e"){
+   if(col.gameObject.tag == "e"  &&  vegectable1==0){
   //verify name of the vegetable to take
    vegetableIndex=5;
    picked1Player1=true;
    slot=1;
     Debug.Log("take one active");
   }
-   if(col.gameObject.tag == "f"){
+   if(col.gameObject.tag == "f"  &&  vegectable1==0){
   //verify name of the vegetable to take
   vegetableIndex=6;
   picked1Player1=true;
@@ -172,41 +172,41 @@ public class SaladControl : MonoBehaviour
   if(picked2Player1==true && slot==1 && Input.GetKeyUp("e")){
     
   //verify name of the vegetable to take
-  if(col.gameObject.tag == "a"){
+  if(col.gameObject.tag == "a"  &&  vegectable2==0){
   vegetableIndex=1;
   picked2Player1=true;
   slot=2;
    Debug.Log("take two active");
   }
-   if(col.gameObject.tag == "b"){
+   if(col.gameObject.tag == "b" &&  vegectable2==0){
   //verify name of the vegetable to take
   vegetableIndex=2;
    picked2Player1=true;
   slot=2;
    Debug.Log("take two active");
   }
-   if(col.gameObject.tag == "c"){
+   if(col.gameObject.tag == "c" &&  vegectable2==0){
   //verify name of the vegetable to take
   vegetableIndex=3;
    picked2Player1=true;
   slot=2;
    Debug.Log("take two active");
   }
-  if(col.gameObject.tag == "d"){
+  if(col.gameObject.tag == "d" &&  vegectable2==0){
   //verify name of the vegetable to take
   vegetableIndex=4;
   picked2Player1=true;
   slot=2;
    Debug.Log("take two active");
   }
-   if(col.gameObject.tag == "e"){
+   if(col.gameObject.tag == "e" &&  vegectable2==0){
   //verify name of the vegetable to take
   vegetableIndex=5;
    picked2Player1=true;
   slot=2;
    Debug.Log("take two active");
   }
-   if(col.gameObject.tag == "f"){
+   if(col.gameObject.tag == "f" &&  vegectable2==0){
   //verify name of the vegetable to take
   vegetableIndex=6;
   picked2Player1=true;
