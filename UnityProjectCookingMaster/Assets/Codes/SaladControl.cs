@@ -44,7 +44,9 @@ public class SaladControl : MonoBehaviour
     //if is vegetable selected, then plate has to be ready and enabled for iterration
     PlateCheffTable.GetComponent<BoxCollider> ().enabled = true; 
     }
-
+    if(chopVegSlot==2){
+    SaladGive1.plates=1;
+    }
     //the timerUI will appear now
     if(timeChop<=5 && chopVeg==true){
     timeChop=timeChop+1*Time.deltaTime;

@@ -16,7 +16,7 @@ public class SaladGive1 : MonoBehaviour
     public GameObject [] vegetablesInThePlate5;
     public GameObject [] vegetablesInMovePlate;
     public GameObject [] vegetablesInStaticPlate,TrashSaladVegetables;
-    public GameObject [] ClientsTimersUi;
+    public GameObject [] ClientsTimersUi,ClientsAngry;
     public static string  saladCombination;
     public static bool reseted,GiveSaladClit1,GiveSaladClit2,GiveSaladClit3,GiveSaladClit4,GiveSaladClit5;
     void Start()
@@ -31,7 +31,7 @@ public class SaladGive1 : MonoBehaviour
     clientCombination3=350;
     clientCombination4=146;
     clientCombination5=316;
-    plates=1;
+    plates=0;
     }
     void Update(){
     saladCombination=SaladControl.vegectable1.ToString()+SaladControl.vegectable2.ToString()+SaladControl.vegectable3.ToString();
@@ -83,9 +83,11 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
+    //if client was give wrong salad we increase velocity of decrease bar timer
+    ClientsTimers.timerVelocity1=6;
+    ClientsTimers.clint1Angry=true;
+    ClientsAngry[0].SetActive(true);
     Debug.Log("Cliet Is Angry wrong salad");
-    //disable UI timer bar for client1
-    ClientsTimersUi[0].SetActive(false);
     ResetAll();
     }
     //give salad2
@@ -134,9 +136,11 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
+    //if client was give wrong salad we increase velocity of decrease bar timer
+    ClientsTimers.timerVelocity2=6;
+    ClientsTimers.clint2Angry=true;
+    ClientsAngry[1].SetActive(true);
     Debug.Log("Cliet Is Angry wrong salad");
-     //disable UI timer bar for client2
-    ClientsTimersUi[1].SetActive(false);
       ResetAll();
     }
         //give salad3
@@ -185,9 +189,11 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
+    //if client was give wrong salad we increase velocity of decrease bar timer
+    ClientsTimers.timerVelocity3=6;
+    ClientsTimers.clint3Angry=true;
+    ClientsAngry[2].SetActive(true);
     Debug.Log("Cliet Is Angry wrong salad");
-   //disable UI timer bar for client3
-    ClientsTimersUi[2].SetActive(false);
     ResetAll();
     }
     //give salad4
@@ -236,9 +242,11 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
+    //if client was give wrong salad we increase velocity of decrease bar timer
+    ClientsTimers.timerVelocity4=3;
+    ClientsTimers.clint4Angry=true;
+    ClientsAngry[3].SetActive(true);
     Debug.Log("Cliet Is Angry wrong salad");
-    //disable UI timer bar for client4
-    ClientsTimersUi[3].SetActive(false); 
     ResetAll();
     }
         //give salad5
@@ -287,10 +295,12 @@ public class SaladGive1 : MonoBehaviour
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
+    //if client was give wrong salad we increase velocity of decrease bar timer
+    ClientsTimers.timerVelocity5=6;
+    ClientsTimers.clint5Angry=true;
+    ClientsAngry[4].SetActive(true);
     Debug.Log("Cliet Is Angry wrong salad");
-      ResetAll();
-    //disable UI timer bar for client5
-    ClientsTimersUi[4].SetActive(false); 
+    ResetAll(); 
     }
     }
 
@@ -298,7 +308,7 @@ public class SaladGive1 : MonoBehaviour
 
     void OnTriggerStay(Collider col){
     //take plate to client
-    if(col.gameObject.tag == "plate1" && Input.GetKeyDown("e")){
+    if(col.gameObject.tag == "plate1" && Input.GetKeyDown("e") && plates==1){
     playerPlateMove.SetActive(true);
     //hide all vegetable in chef plate
     vegetablesInStaticPlate[SaladControl.vegectable1].SetActive(false);

@@ -5,21 +5,31 @@ using UnityEngine.UI;
 public class ClientsTimers : MonoBehaviour
 {
 
-    public float timer1,timer2,timer3,timer4,timer5;
+    public static float timer1,timer2,timer3,timer4,timer5,timerVelocity1,timerVelocity2,timerVelocity3,timerVelocity4,timerVelocity5;
     public int client;
     public Slider slider1,slider2,slider3,slider4,slider5;
     public GameObject [] Clients,ClientsTimeBar,powersUp;
-    public static bool satisfied1,satisfied2,satisfied3,satisfied4,satisfied5;
+    public static bool satisfied1,satisfied2,satisfied3,satisfied4,satisfied5,clint1Angry,clint2Angry,clint3Angry,clint4Angry,clint5Angry;
     public List<int> numbersToChooseFrom = new List<int>(new int[]{1,2,3,4,5,6});
 
     void Start(){
     client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
     satisfied1=false;
     satisfied2=false;
-    satisfied3=false;
+    satisfied3=false;  
     satisfied4=false;
     satisfied5=false;
-    }
+    clint1Angry=false;
+    clint2Angry=false;
+    clint3Angry=false;
+    clint4Angry=false;
+    clint5Angry=false;
+    timerVelocity1=1;
+    timerVelocity2=1;
+    timerVelocity3=1;
+    timerVelocity4=1;
+    timerVelocity5=1;
+    } 
 
     void Update()
     {
@@ -30,28 +40,32 @@ public class ClientsTimers : MonoBehaviour
     Debug.Log("new client is active");
     SaladGive1.GiveSaladClit1=false;
     }
-      //remove client 2 from list
+    
+    //remove client 2 from list
     if(SaladGive1.GiveSaladClit2==true && SaladGive1.saladCombination==SaladGive1.clientCombination2.ToString()){
      numbersToChooseFrom.Remove(2);
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit2=false;
     }
-      //remove client 3 from list
+
+    //remove client 3 from list
      if(SaladGive1.GiveSaladClit3==true && SaladGive1.saladCombination==SaladGive1.clientCombination3.ToString()){
      numbersToChooseFrom.Remove(3);
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit3=false;
     }
-      //remove client 4 from list
+    
+    //remove client 4 from list
     if(SaladGive1.GiveSaladClit4==true && SaladGive1.saladCombination==SaladGive1.clientCombination4.ToString()){
      numbersToChooseFrom.Remove(4);
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
      Debug.Log("new client is active");
      SaladGive1.GiveSaladClit4=false;
     }
-      //remove client 5 from list
+    
+    //remove client 5 from list
      if(SaladGive1.GiveSaladClit5==true && SaladGive1.saladCombination==SaladGive1.clientCombination5.ToString()){
      numbersToChooseFrom.Remove(5);
      client = numbersToChooseFrom[Random.Range(0, numbersToChooseFrom.Count)];
@@ -61,27 +75,27 @@ public class ClientsTimers : MonoBehaviour
     
     if(client==1)
     {
-    timer1=timer1+1*Time.deltaTime;
+    timer1=timer1+timerVelocity1*Time.deltaTime;
     slider1.value=timer1;
     }
     if(client==2)
     {
-    timer2=timer2+1*Time.deltaTime;
+    timer2=timer2+timerVelocity2*Time.deltaTime;
     slider2.value=timer2;
     }
     if(client==3)
     {
-    timer3=timer3+1*Time.deltaTime;
+    timer3=timer3+timerVelocity3*Time.deltaTime;
     slider3.value=timer3;
     }
     if(client==4)
     {
-    timer4=timer4+1*Time.deltaTime;
+    timer4=timer4+timerVelocity4*Time.deltaTime;
     slider4.value=timer4;
     }
      if(client==5)
     {
-    timer5=timer5+1*Time.deltaTime;
+    timer5=timer5+timerVelocity5*Time.deltaTime;
     slider5.value=timer5;
     }
     //disable clients and penalize players
