@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerTwo : MonoBehaviour
 {
@@ -8,10 +9,26 @@ public class PlayerTwo : MonoBehaviour
     // player variable tranform to move around the level	
     public Transform playerTwo;
     //velocity player moves variable
-    public float playerVelocity;
+    public static int Score;
+    public static float playerVelocity;
+    public static float velocityTimer;
 
+    public Text ScoreIu;
+    void Start(){
+    Score=250; 
+    playerVelocity=10; 
+    }
 
 void Update(){
+    //increase speed of player
+if(velocityTimer>0){
+velocityTimer=velocityTimer-1*Time.deltaTime;
+playerVelocity=20;
+}else{
+playerVelocity=10;
+}
+
+ScoreIu.text="Score: "+Score;
 //all the keys to move around the player in scene with limits 
 if(Input.GetKey("up") && playerTwo.position.z < -0.3)
 {
@@ -33,7 +50,9 @@ if(Input.GetKey("right") && playerTwo.position.x < 26.5)
 {
 //calling method right to move player to right sides of the scene
  Right();
+
 }
+
 }
 
 //all methods to transform the player up,down,left and right

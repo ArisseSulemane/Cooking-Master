@@ -41,7 +41,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate1.SetActive(true);
     //-------------------------------------------------------------
     if(SaladControl.vegectable3==0){
     vegetablesInThePlate1[SaladControl.vegectable1].SetActive(true);
@@ -67,18 +66,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate1.SetActive(true);
-    if(SaladControl.vegectable3==0)
-    {
-    vegetablesInThePlate1[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate1[SaladControl.vegectable2].SetActive(true);
-    }
-    else
-    {
-    vegetablesInThePlate1[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate1[SaladControl.vegectable2].SetActive(true);
-    vegetablesInThePlate1[SaladControl.vegectable3].SetActive(true);
-    }
     plates=0;
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
@@ -120,18 +107,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate2.SetActive(true);
-    if(SaladControl.vegectable3==0)
-    {
-    vegetablesInThePlate2[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate2[SaladControl.vegectable2].SetActive(true);
-    }
-    else
-    {
-    vegetablesInThePlate2[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate2[SaladControl.vegectable2].SetActive(true);
-    vegetablesInThePlate2[SaladControl.vegectable3].SetActive(true);
-    }
     plates=0;
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
@@ -173,18 +148,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate3.SetActive(true);
-    if(SaladControl.vegectable3==0)
-    {
-    vegetablesInThePlate3[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate3[SaladControl.vegectable2].SetActive(true);
-    }
-    else
-    {
-    vegetablesInThePlate3[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate3[SaladControl.vegectable2].SetActive(true);
-    vegetablesInThePlate3[SaladControl.vegectable3].SetActive(true);
-    }
     plates=0;
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
@@ -226,19 +189,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate4.SetActive(true);
-    if(SaladControl.vegectable3==0)
-    {
-    vegetablesInThePlate4[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate4[SaladControl.vegectable2].SetActive(true);
-    }
-    else
-    {
-    vegetablesInThePlate4[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate4[SaladControl.vegectable2].SetActive(true);
-    vegetablesInThePlate4[SaladControl.vegectable3].SetActive(true);
-    }
-    plates=0;
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
     }
@@ -279,18 +229,6 @@ public class SaladGive1 : MonoBehaviour
     vegetablesInMovePlate[SaladControl.vegectable2].SetActive(false);
     vegetablesInMovePlate[SaladControl.vegectable3].SetActive(false);
     playerPlateMove.SetActive(false);
-    clientPlate5.SetActive(true);
-    if(SaladControl.vegectable3==0)
-    {
-    vegetablesInThePlate5[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate5[SaladControl.vegectable2].SetActive(true);
-    }
-    else
-    {
-    vegetablesInThePlate5[SaladControl.vegectable1].SetActive(true);
-    vegetablesInThePlate5[SaladControl.vegectable2].SetActive(true);
-    vegetablesInThePlate5[SaladControl.vegectable3].SetActive(true);
-    }
     plates=0;
     if(PlayerOne.Score>0){
     PlayerOne.Score=PlayerOne.Score-10;
@@ -375,24 +313,29 @@ public class SaladGive1 : MonoBehaviour
 
     //client 1 give food
     if(col.gameObject.tag == "client1" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
-    GiveSaladClit1=true; 
+    GiveSaladClit1=true;
+    ClientsTimers.clientWrondSalad1=1;
     }
     //client 2 give food
     if(col.gameObject.tag == "client2" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit2=true;
+    ClientsTimers.clientWrondSalad2=1;
     }
     //client 3 give food
     if(col.gameObject.tag == "client3" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit3=true;
+    ClientsTimers.clientWrondSalad3=1;
     }
 
     //client 4 give food
     if(col.gameObject.tag == "client4" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
     GiveSaladClit4=true;
+    ClientsTimers.clientWrondSalad4=1;
     }
     //client 5 give food
     if(col.gameObject.tag == "client5" && Input.GetKeyDown("e") && plates==1 && SaladControl.vegectable1!=0){
      GiveSaladClit5=true;
+     ClientsTimers.clientWrondSalad5=1;
     }
 
 
@@ -423,7 +366,7 @@ public class SaladGive1 : MonoBehaviour
    GiveSaladClit3=false;
    GiveSaladClit4=false;
    GiveSaladClit5=false;
-   plates=1;
+   plates=0;
    Debug.Log("picked1"+SaladControl.picked1Player1);
    Debug.Log("picked2"+SaladControl.picked2Player1);
    Debug.Log("pickd3"+SaladControl.picked3Player1);
